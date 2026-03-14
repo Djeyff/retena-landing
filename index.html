@@ -1,9 +1,4 @@
-<!DOCTYPE h
-  <div class="faq-item"><div class="fq" onclick="tog(this)">Can Retena capture my 1-on-1 WhatsApp chats? <span>+</span></div><div class="fa">No — and that's by design. Retena only captures groups where its number has been added as a member. It has zero access to your personal conversations. For personal voice notes, forward them to Retena's number and they'll appear in your Personal Inbox on the dashboard, transcribed and searchable.</div></div>
-  <div class="faq-item"><div class="fq" onclick="tog(this)">Can I choose which groups Retena captures? <span>+</span></div><div class="fa">Absolutely. You have full control. Add Retena's number to a group and capture starts. Pause any group from your dashboard. Remove Retena's number from the group to fully disconnect. You decide exactly which groups are captured.</div></div>
-  <div class="faq-item"><div class="fq" onclick="tog(this)">What's the difference between VozClara and Retena in a group? <span>+</span></div><div class="fa">VozClara replies with transcripts directly in the group chat — everyone sees them. Retena captures silently and sends everything to a private dashboard. For business groups, Retena is the right choice because it doesn't clutter your chat with bot replies.</div></div>
-  <div class="faq-item"><div class="fq" onclick="tog(this)">Can I use Retena for personal voice notes too? <span>+</span></div><div class="fa">Yes! Forward any voice note from your 1-on-1 WhatsApp chats to Retena's number. It appears in your Personal Inbox — transcribed, searchable alongside your group data. No extra charge, counts against your voice minutes.</div></div>
-  <div class="faq-item"><div class="fq" onclick="tog(this)">What's the difference between Retena and VozClara? <span>+</span></div><div class="fa">VozClara gives you instant text back in your chat — great for quick personal transcription. Retena silently captures your business groups AND lets you forward personal notes into a unified searchable dashboard with AI. VozClara for quick replies, Retena for organized memory.</div></div>tml>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -545,6 +540,11 @@
       <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span data-i18n="fq7q">Why per team, not per seat?</span><span class="ftg">+</span></div><div class="fqa" data-i18n="fq7a">Because your whole team benefits — not just the person paying. A team of 15 shouldn't pay 15 × $19/seat. Retena scales with the number of groups you manage, not headcount.</div></div>
       <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span data-i18n="fq8q">What's the difference between Retena and VozClara?</span><span class="ftg">+</span></div><div class="fqa" data-i18n="fq8a">VozClara is personal: you transcribe YOUR OWN voice notes. Retena is for teams: it captures EVERYONE's voice notes in WhatsApp groups. Different tools, different use cases — many users have both.</div></div>
           <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>What is VozClara?</span><span class="ftg">+</span></div><div class="fqa">VozClara is personal AI voice transcription inside WhatsApp and Telegram. Send a voice note, get an instant transcript. 99 languages, AI summaries. Free to start — all Retena members get free VozClara Basic. <a href="https://voz-clara.com" style="color:#2A5C8F;">voz-clara.com →</a></div></div>
+      <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>Can Retena capture my 1-on-1 WhatsApp chats?</span><span class="ftg">+</span></div><div class="fqa">No — and that's by design. Retena only captures groups where its number has been added as a member. It has zero access to your personal conversations. For personal voice notes, forward them to Retena's number and they'll appear in your Personal Inbox on the dashboard, transcribed and searchable.</div></div>
+      <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>Can I choose which groups Retena captures?</span><span class="ftg">+</span></div><div class="fqa">Absolutely. You have full control. Add Retena's number to a group and capture starts. Pause any group from your dashboard. Remove Retena's number from the group to fully disconnect. You decide exactly which groups are captured.</div></div>
+      <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>What's the difference between VozClara and Retena in a group?</span><span class="ftg">+</span></div><div class="fqa">VozClara replies with transcripts directly in the group chat — everyone sees them. Retena captures silently and sends everything to a private dashboard. For business groups, Retena is the right choice because it doesn't clutter your chat with bot replies.</div></div>
+      <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>Can I use Retena for personal voice notes too?</span><span class="ftg">+</span></div><div class="fqa">Yes! Forward any voice note from your 1-on-1 WhatsApp chats to Retena's number. It appears in your Personal Inbox — transcribed, searchable alongside your group data. No extra charge, counts against your voice minutes.</div></div>
+      <div class="fq"><div class="fqq" onclick="toggleFaq(this)"><span>What's the difference between Retena and VozClara?</span><span class="ftg">+</span></div><div class="fqa">VozClara gives you instant text back in your chat — great for quick personal transcription. Retena silently captures your business groups AND lets you forward personal notes into a unified searchable dashboard with AI. VozClara for quick replies, Retena for organized memory.</div></div>
     </div>
   </div>
 </section>
@@ -711,6 +711,7 @@ document.getElementById('langSearch').addEventListener('input',e=>buildLangOpts(
 
 function closeMob(){ document.getElementById('mobNav').classList.remove('open'); }
 
+function tog(el){var q=el.querySelector('.fqq');toggleFaq(q||el)}
 function toggleFaq(el){
   const item=el.closest('.fq');
   const wasOpen=item.classList.contains('open');
