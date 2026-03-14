@@ -396,7 +396,7 @@
   <script>
     Paddle.Environment.set("sandbox");
     Paddle.Initialize({
-      token: "test_3e279451d1b38d8d8c025ac3088",  // sandbox client token — replace before go-live
+      token: "test_CLIENT_TOKEN_FROM_PADDLE_DASHBOARD",  // Paddle Dashboard > Developer Tools > Authentication > Client-side token
       eventCallback: function(data) {
         if (data.name === "checkout.completed") {
           setTimeout(() => window.location.reload(), 1500);
@@ -404,11 +404,11 @@
       }
     });
 
-    // Retena Price IDs (Paddle sandbox)
+    // Retena Price IDs — Paddle sandbox (shared account with VozClara for now)
     const RETENA_PRICES = {
-      starter:  "pri_01jkrt_starter000000000000",  // replace with real sandbox price ID
-      pro:      "pri_01jkrt_pro00000000000000000",  // replace with real sandbox price ID
-      business: "pri_01jkrt_biz0000000000000000",   // replace with real sandbox price ID
+      starter:  "pri_01kk6w6ctyye26kx0yrh4v17za",   // maps to Basic slot — replace with Retena Starter price
+      pro:      "pri_01kk6w6d127yxk4mxycjjada4h",   // maps to Pro slot
+      business: "pri_01kk6w6d6hgw751740b4k9aqf7",   // maps to Business slot
     };
 
     function paddleCheckoutRetena(tier, userEmail, userId, workspaceId) {
