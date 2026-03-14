@@ -391,6 +391,45 @@
   </style>
   <script>tailwind.config = { corePlugins: { preflight: false } }</script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Paddle Billing v2 -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: "test_3e279451d1b38d8d8c025ac3088",  // sandbox client token — replace before go-live
+      eventCallback: function(data) {
+        if (data.name === "checkout.completed") {
+          setTimeout(() => window.location.reload(), 1500);
+        }
+      }
+    });
+
+    // Retena Price IDs (Paddle sandbox)
+    const RETENA_PRICES = {
+      starter:  "pri_01jkrt_starter000000000000",  // replace with real sandbox price ID
+      pro:      "pri_01jkrt_pro00000000000000000",  // replace with real sandbox price ID
+      business: "pri_01jkrt_biz0000000000000000",   // replace with real sandbox price ID
+    };
+
+    function paddleCheckoutRetena(tier, userEmail, userId, workspaceId) {
+      const priceId = RETENA_PRICES[tier];
+      if (!priceId) { alert("Pricing not configured yet."); return; }
+      Paddle.Checkout.open({
+        items: [{ priceId, quantity: 1 }],
+        customer: { email: userEmail || "" },
+        customData: { user_id: userId || "", workspace_id: workspaceId || "", app: "retena" },
+        settings: { theme: "dark", displayMode: "overlay", locale: "en" }
+      });
+    }
+
+    function openRetenaPortal() {
+      // Retena uses the same vozclara-dashboard backend for billing portal
+      fetch('https://app.voz-clara.com/api/paddle/portal', { credentials: 'include' })
+        .then(r => r.json())
+        .then(d => { if (d.url) window.open(d.url, '_blank'); else alert('Unable to open billing portal.'); })
+        .catch(() => alert('Unable to open billing portal.'));
+    }
+  </script>
 </head>
 <body>
 
