@@ -588,257 +588,86 @@
     <div class="content">
 
       <!-- HOME -->
-      <div class="panel-section active" id="section-home">
+      <div class="section active" id="section-home">
         <!-- Quick search -->
         <div class="home-search">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-          <input type="text" placeholder="Ask anything about your groups or personal notes..." id="home-search-input" onkeydown="handleHomeSearch(event)">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="home-search-icon" style="width:16px;height:16px;stroke:#64748b"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          <input id="home-search-input" placeholder="Search across all groups..." class="home-search-inp" onfocus="showSection('search');document.getElementById('ai-search-input')?.focus()" readonly>
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-label">Groups connected</div>
-            <div class="stat-val">3</div>
-            <div class="stat-sub">2 active · 1 paused</div>
+        <!-- Metric cards -->
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px">
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Groups Connected</p>
+            <p style="font-size:24px;font-weight:700;color:#fff;margin:0">3</p>
+            <p style="font-size:11px;color:#4ade80;margin:4px 0 0">↑ 1 new detected</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-label">Voice notes captured</div>
-            <div class="stat-val">18</div>
-            <div class="stat-sub">This month</div>
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Voice Notes</p>
+            <p style="font-size:24px;font-weight:700;color:#E67E22;margin:0">18</p>
+            <p style="font-size:11px;color:#64748b;margin:4px 0 0">this month</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-label">AI searches</div>
-            <div class="stat-val">5</div>
-            <div class="stat-sub">This month</div>
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">AI Searches</p>
+            <p style="font-size:24px;font-weight:700;color:#fff;margin:0">5</p>
+            <p style="font-size:11px;color:#64748b;margin:4px 0 0">this month</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-label">Summaries sent</div>
-            <div class="stat-val">3</div>
-            <div class="stat-sub">This week</div>
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Summaries</p>
+            <p style="font-size:24px;font-weight:700;color:#fff;margin:0">3</p>
+            <p style="font-size:11px;color:#64748b;margin:4px 0 0">this week</p>
           </div>
         </div>
 
         <!-- Today's Briefing -->
-        <div class="section-hdr" style="margin-top:20px"><span class="section-title">Today's Briefing</span></div>
-
-        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:12px">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <h4 style="font-size:14px;font-weight:600;color:#fff;margin:0">🏗️ Construcción Coral</h4>
-            <span style="font-size:12px;color:#64748b">47 msgs · 12 voice</span>
-          </div>
-          <div style="margin-bottom:10px">
-            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key decisions</p>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Cement budget increased 15%</li>
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Jean updating quote by Friday</li>
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Tile delivery confirmed for Thursday</li>
-            </ul>
-          </div>
-          <div>
-            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Action items</p>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Update budget spreadsheet</li>
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Clear area for electrician tomorrow</li>
-            </ul>
-          </div>
-          <a onclick="navigate('summaries', document.querySelector('[data-section=summaries]'))" style="font-size:12px;color:#E67E22;text-decoration:none;margin-top:8px;display:inline-block;cursor:pointer">View full summary →</a>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <p style="font-size:13px;font-weight:600;color:#fff;margin:0">Today's Briefing</p>
+          <a onclick="showSection('summaries')" style="font-size:12px;color:#E67E22;cursor:pointer">All summaries →</a>
         </div>
+        <div id="home-briefing"></div>
 
-        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:12px">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-            <h4 style="font-size:14px;font-weight:600;color:#fff;margin:0">📋 Management</h4>
-            <span style="font-size:12px;color:#64748b">23 msgs · 6 voice</span>
-          </div>
-          <div style="margin-bottom:10px">
-            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key decisions</p>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Client meeting confirmed for Friday 3pm</li>
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Bank financing approved</li>
-            </ul>
-          </div>
-          <div>
-            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Action items</p>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Prepare floor plans for meeting</li>
-              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Submit 2 documents to bank by March 20</li>
-            </ul>
-          </div>
-          <a onclick="navigate('summaries', document.querySelector('[data-section=summaries]'))" style="font-size:12px;color:#E67E22;text-decoration:none;margin-top:8px;display:inline-block;cursor:pointer">View full summary →</a>
+        <!-- Recent messages -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:20px 0 10px">
+          <p style="font-size:13px;font-weight:600;color:#fff;margin:0">Recent Messages</p>
+          <a onclick="showSection('activity')" style="font-size:12px;color:#E67E22;cursor:pointer">View all →</a>
         </div>
-
-<div class="bg-gray-800 rounded-xl border border-gray-700 p-4 flex items-center justify-between mb-4" id="vozclara-tip" style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:20px">🎤</span>
-            <div>
-              <p style="font-size:14px;color:#fff;margin:0 0 2px">Need to transcribe a personal voice note?</p>
-              <p style="font-size:12px;color:#94a3b8;margin:0">Retena captures groups. For quick 1-on-1 transcription, use VozClara — free for Retena members.</p>
+        <div id="home-recent"></div>
+      </div><div class="section" id="section-groups">
+        <div style="display:flex;gap:0;height:calc(100vh - 56px)">
+          <!-- Left: group list (360px) -->
+          <div style="width:360px;min-width:220px;border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;flex-shrink:0" id="group-list-panel">
+            <div style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:13px;font-weight:600;color:#fff">Groups</span>
+              <button style="font-size:12px;background:#E67E22;color:#fff;border:none;padding:5px 10px;border-radius:8px;cursor:pointer">+ Connect group</button>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:12px">
+              <!-- New group detection card -->
+              <div style="background:rgba(230,126,34,.08);border:1px solid rgba(230,126,34,.2);border-radius:12px;padding:14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:38px;height:38px;border-radius:10px;background:rgba(230,126,34,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🆕</div>
+                  <div>
+                    <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">New group detected: "🏗️ Proyecto Norte"</p>
+                    <p style="font-size:11px;color:#94a3b8;margin:0">Retena was added · Start capturing?</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:6px;flex-shrink:0">
+                  <button onclick="this.closest('div[style*=rgba]').remove()" style="font-size:11px;background:#E67E22;color:#fff;border:none;padding:5px 10px;border-radius:7px;cursor:pointer;white-space:nowrap">Start capture</button>
+                  <button onclick="this.closest('div[style*=rgba]').remove()" style="font-size:11px;color:#94a3b8;background:rgba(255,255,255,.05);border:none;padding:5px 10px;border-radius:7px;cursor:pointer">Ignore</button>
+                </div>
+              </div>
+              <!-- Group cards rendered by JS -->
+              <div id="group-card-list"></div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <a href="https://voz-clara.com" style="font-size:12px;color:#2A5C8F;text-decoration:none;white-space:nowrap">Try VozClara →</a>
-            <button style="background:none;border:none;color:#64748b;font-size:18px;cursor:pointer" onclick="document.getElementById('vozclara-tip').remove()">×</button>
-          </div>
-        </div>
-
-                <div class="section-hdr" style="margin-top:20px"><span class="section-title">Recent activity</span></div>
-
-        <!-- Recent messages feed -->
-        <div style="display:flex;flex-direction:column">
-          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
-            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">CM</div>
-            <div style="flex:1;min-width:0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-                <span style="font-size:13px;font-weight:500;color:#fff">Carlos Méndez</span>
-                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
-                <span style="font-size:11px;color:#64748b">2m ago</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:6px">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                <span style="font-size:11px;color:#64748b">0:47</span>
-                <p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Hay que revisar los precios antes del lunes. El cemento subió 15%...</p>
-              </div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
-            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">JP</div>
-            <div style="flex:1;min-width:0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-                <span style="font-size:13px;font-weight:500;color:#fff">Jean Pierre</span>
-                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
-                <span style="font-size:11px;color:#64748b">8m ago</span>
-              </div>
-              <p style="font-size:13px;color:#cbd5e1;margin:0">OK, actualizo la cotización para el viernes</p>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
-            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">ML</div>
-            <div style="flex:1;min-width:0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-                <span style="font-size:13px;font-weight:500;color:#fff">María López</span>
-                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span>
-                <span style="font-size:11px;color:#64748b">12m ago</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:6px">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                <span style="font-size:11px;color:#64748b">1:12</span>
-                <p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">El cliente confirmó la reunión para el viernes a las 3...</p>
-              </div>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
-            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">RS</div>
-            <div style="flex:1;min-width:0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-                <span style="font-size:13px;font-weight:500;color:#fff">Roberto Santos</span>
-                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
-                <span style="font-size:11px;color:#64748b">20m ago</span>
-              </div>
-              <p style="font-size:13px;color:#cbd5e1;margin:0">Ya confirmé con el proveedor de azulejos. Entrega para jueves.</p>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;padding:12px 0">
-            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">AG</div>
-            <div style="flex:1;min-width:0">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
-                <span style="font-size:13px;font-weight:500;color:#fff">Ana García</span>
-                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span>
-                <span style="font-size:11px;color:#64748b">28m ago</span>
-              </div>
-              <p style="font-size:13px;color:#cbd5e1;margin:0">Envié los contratos por email. Revisar antes del viernes por favor.</p>
+          <!-- Right: group detail -->
+          <div style="flex:1;overflow-y:auto;padding:20px;display:flex;align-items:center;justify-content:center" id="group-detail">
+            <div style="text-align:center">
+              <div style="font-size:40px;margin-bottom:12px">💬</div>
+              <p style="color:#64748b;font-size:14px">Select a group to view details</p>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- GROUPS -->
-      <div class="panel-section" id="section-groups">
-        <div style="display:flex;gap:0;height:calc(100vh - 120px);overflow:hidden">
-          <!-- Left: group list -->
-          <div style="width:280px;min-width:280px;border-right:1px solid rgba(255,255,255,.07);overflow-y:auto;padding:12px">
-            <!-- New group detected -->
-            <div style="background:rgba(230,126,34,.08);border:1px solid rgba(230,126,34,.2);border-radius:12px;padding:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
-              <div style="display:flex;align-items:center;gap:10px">
-                <div style="width:38px;height:38px;border-radius:10px;background:rgba(230,126,34,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🆕</div>
-                <div>
-                  <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">New: "🏗️ Proyecto Norte"</p>
-                  <p style="font-size:11px;color:#94a3b8;margin:0">Added to this group. Start capturing?</p>
-                </div>
-              </div>
-              <div style="display:flex;flex-direction:column;gap:4px">
-                <button onclick="this.closest('div').parentElement.remove()" style="font-size:11px;background:#E67E22;color:#fff;border:none;padding:4px 10px;border-radius:6px;cursor:pointer">Start</button>
-                <button onclick="this.closest('div').parentElement.remove()" style="font-size:11px;background:none;color:#94a3b8;border:1px solid #334155;padding:4px 10px;border-radius:6px;cursor:pointer">Ignore</button>
-              </div>
-            </div>
-            <!-- Group cards -->
-            <button onclick="showGroupDetail('g1')" id="gcard-g1" class="group-card" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
-              <div style="display:flex;align-items:center;gap:10px">
-                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🏗️</div>
-                <div style="flex:1;min-width:0">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:13px;font-weight:500;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Construcción Coral</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
-                    <span>15 members</span><span>·</span><span>2m ago</span>
-                  </div>
-                </div>
-                <div style="text-align:right;flex-shrink:0">
-                  <p style="font-size:11px;color:#94a3b8;margin:0">47 msgs</p>
-                  <p style="font-size:11px;color:#64748b;margin:0">12 voice</p>
-                </div>
-              </div>
-            </button>
-            <button onclick="showGroupDetail('g2')" id="gcard-g2" class="group-card" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
-              <div style="display:flex;align-items:center;gap:10px">
-                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📋</div>
-                <div style="flex:1;min-width:0">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:13px;font-weight:500;color:#fff">Management</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
-                    <span>8 members</span><span>·</span><span>8m ago</span>
-                  </div>
-                </div>
-                <div style="text-align:right;flex-shrink:0">
-                  <p style="font-size:11px;color:#94a3b8;margin:0">23 msgs</p>
-                  <p style="font-size:11px;color:#64748b;margin:0">6 voice</p>
-                </div>
-              </div>
-            </button>
-            <button onclick="showGroupDetail('g3')" id="gcard-g3" class="group-card" style="width:100%;text-align:left;padding:12px;background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
-              <div style="display:flex;align-items:center;gap:10px">
-                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💼</div>
-                <div style="flex:1;min-width:0">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:13px;font-weight:500;color:#fff">Cliente Rodriguez</span>
-                    <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0"></span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
-                    <span>5 members</span><span>·</span><span>2h ago</span>
-                  </div>
-                </div>
-                <div style="text-align:right;flex-shrink:0">
-                  <p style="font-size:11px;color:#94a3b8;margin:0">3 msgs</p>
-                  <p style="font-size:11px;color:#64748b;margin:0">1 voice</p>
-                </div>
-              </div>
-            </button>
-          </div>
-          <!-- Right: detail panel -->
-          <div id="group-detail" style="flex:1;overflow-y:auto;padding:20px;display:flex;align-items:center;justify-content:center">
-            <div style="text-align:center;color:#64748b">
-              <div style="font-size:36px;margin-bottom:12px">👈</div>
-              <p style="font-size:14px">Select a group to view details</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PERSONAL INBOX -->
-      <div class="panel-section" id="section-personal">
+      </div><div class="panel-section" id="section-personal">
         <div style="display:flex;gap:0;height:calc(100vh - 120px);overflow:hidden">
           <!-- Left: note list -->
           <div style="width:300px;min-width:300px;border-right:1px solid rgba(255,255,255,.07);overflow-y:auto">
@@ -1223,7 +1052,7 @@
           <!-- Tab bar -->
           <div style="display:flex;gap:0;border-bottom:1px solid #2a3a54;margin-bottom:20px;overflow-x:auto">
             <button onclick="showSettingsTab('workspace',this)" class="stab active" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#60a5fa;border-bottom:2px solid #2A5C8F;cursor:pointer;white-space:nowrap">Workspace</button>
-            <button onclick="showSettingsTab('groups-s',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Groups</button>
+            <button onclick="showSettingsTab('groups',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Groups</button>
             <button onclick="showSettingsTab('team',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Team</button>
             <button onclick="showSettingsTab('billing',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Billing</button>
             <button onclick="showSettingsTab('notifications',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Notifications</button>
@@ -1243,10 +1072,7 @@
               <button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;width:fit-content">Save changes</button>
             </div>
           </div>
-          <div id="stab-groups-s" style="display:none">
-            <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px">
-                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:18px">🏗️</span><div><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Construcción Coral</p><p style="font-size:11px;color:#64748b;margin:0">15 members · Active since Mar 1</p></div></div>
+          </div>
                 <div style="display:flex;align-items:center;gap:10px">
                   <button style="position:relative;width:38px;height:20px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button>
                   <button style="font-size:11px;color:#ef4444;background:none;border:1px solid rgba(239,68,68,.2);padding:4px 8px;border-radius:6px;cursor:pointer">Disconnect</button>
@@ -1268,7 +1094,40 @@
               </div>
             </div>
           </div>
-          <div id="stab-team" style="display:none">
+          <div <div id="stab-groups" style="display:none">
+              <h3 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 14px">Connected Groups</h3>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🏗️</div>
+                  <div style="flex:1">
+                    <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">🏗️ Construcción Coral</p>
+                    <p style="font-size:11px;color:#4ade80;margin:0">Active</p>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <button style="font-size:11px;background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2);padding:4px 10px;border-radius:7px;cursor:pointer">Disconnect</button>
+                  </div>
+                </div><div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">📋</div>
+                  <div style="flex:1">
+                    <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">📋 Management</p>
+                    <p style="font-size:11px;color:#4ade80;margin:0">Active</p>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <button style="font-size:11px;background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2);padding:4px 10px;border-radius:7px;cursor:pointer">Disconnect</button>
+                  </div>
+                </div><div style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">💼</div>
+                  <div style="flex:1">
+                    <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">💼 Cliente Rodriguez</p>
+                    <p style="font-size:11px;color:#f59e0b;margin:0">Paused</p>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <button style="font-size:11px;background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2);padding:4px 10px;border-radius:7px;cursor:pointer">Disconnect</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            id="stab-team" style="display:none">
             <div style="display:flex;justify-content:flex-end;margin-bottom:12px"><button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:7px 14px;border-radius:8px;cursor:pointer">+ Invite member</button></div>
             <div style="display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;align-items:center;gap:10px;padding:10px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600">JK</div><div style="flex:1"><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Jeff Kaan</p><p style="font-size:11px;color:#64748b;margin:0">djeyff06@gmail.com</p></div><span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(230,126,34,.1);color:#E67E22;border:1px solid rgba(230,126,34,.2)">Admin</span></div>
@@ -1439,6 +1298,14 @@
 
     // Update title
     document.getElementById('page-title').textContent = TITLES[section] || section;
+
+    // Dynamic rendering hooks
+    if(section === 'home') setTimeout(renderHome, 0);
+    if(section === 'groups') setTimeout(renderGroupCards, 0);
+  }
+  function showSection(s) {
+    const btn = document.querySelector('[data-section="' + s + '"]');
+    navigate(s, btn);
   }
 
   // ── User popover toggle ──
@@ -1529,6 +1396,94 @@
       keyPoints:["Lawyer meeting Thursday 2pm","Bring condo documents"] },
   ];
   // ── Group detail ──
+  // ── Render home briefing + activity ──
+  function renderHome() {
+    // Briefing cards from mockSummaries
+    const bEl = document.getElementById('home-briefing');
+    if(bEl) {
+      bEl.innerHTML = mockSummaries.map(s => {
+        const g = mockGroups.find(x=>x.id===s.groupId) || {};
+        return `<div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <h4 style="font-size:14px;font-weight:600;color:#fff;margin:0">${g.name||'Group'}</h4>
+            <span style="font-size:11px;color:#64748b">${g.todayMsgs||0} msgs · ${g.todayVoice||0} voice</span>
+          </div>
+          <div style="margin-bottom:10px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key decisions</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              ${s.decisions.map(d=>`<li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>${d}</li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Action items</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              ${s.actionItems.slice(0,3).map(a=>`<li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>${a}</li>`).join('')}
+            </ul>
+          </div>
+          <a onclick="showSection('summaries')" style="font-size:12px;color:#E67E22;cursor:pointer;display:inline-block;margin-top:10px">View full summary →</a>
+        </div>`;
+      }).join('');
+    }
+    // Recent messages from mockMessages (last 6, sorted newest first)
+    const rEl = document.getElementById('home-recent');
+    if(rEl) {
+      const recent = [...mockMessages].reverse().slice(0,6);
+      rEl.innerHTML = recent.map(m => {
+        const g = mockGroups.find(x=>x.id===m.groupId)||{};
+        const t = new Date(m.date);
+        const timeAgo = (() => { const diff = (Date.now() - t)/1000/60; if(diff<60) return Math.round(diff)+'m ago'; return Math.round(diff/60)+'h ago'; })();
+        return `<div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+          <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">${m.initials}</div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;flex-wrap:wrap">
+              <span style="font-size:13px;font-weight:500;color:#fff">${m.sender}</span>
+              <span style="font-size:11px;padding:1px 6px;border-radius:12px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">${g.name||''}</span>
+              <span style="font-size:11px;color:#64748b">${timeAgo}</span>
+            </div>
+            ${m.type==='voice'
+              ? `<div style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" fill="none" stroke="#E67E22" style="width:12px;height:12px" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg><span style="font-size:11px;background:#1e2a3a;color:#64748b;padding:1px 5px;border-radius:4px">${m.duration}</span><p style="font-size:13px;color:#cbd5e1;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.text}</p></div>`
+              : `<p style="font-size:13px;color:#cbd5e1;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.text}</p>`
+            }
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  // ── Render group card list ──
+  function renderGroupCards() {
+    const el = document.getElementById('group-card-list');
+    if(!el) return;
+    el.innerHTML = mockGroups.map(g => `
+      <button onclick="showGroupDetail('${g.id}')" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.05);background:none;border-left:none;border-right:none;border-top:none;cursor:pointer;transition:background .12s;font-family:inherit" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='none'">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:40px;height:40px;border-radius:12px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">${g.emoji}</div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px">
+              <span style="font-size:13px;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g.name}</span>
+              <span style="width:8px;height:8px;border-radius:50%;background:${g.status==='active'?'#22c55e':'#f59e0b'};flex-shrink:0;display:inline-block"></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
+              <span>${g.members} members</span>
+              <span>·</span>
+              <span>${g.lastMessage}</span>
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <p style="font-size:11px;color:#64748b;margin:0">${g.todayMsgs} msgs</p>
+            <p style="font-size:11px;color:#94a3b8;margin:2px 0 0">${g.todayVoice} voice</p>
+          </div>
+        </div>
+      </button>`).join('');
+  }
+
+  // ── Also need mockSummaries for home briefing ──
+  const mockSummaries = [
+    { id:"s1", groupId:"g1", date:"2026-03-14", type:"daily", decisions:["Cement budget increased 15%","Jean updating quote by Friday","Tile delivery confirmed for Thursday"], actionItems:["Update budget spreadsheet","Confirm new supplier prices","Clear area for electrician tomorrow"], topics:["Budget","Materials","Timeline","Permits"] },
+    { id:"s2", groupId:"g2", date:"2026-03-14", type:"daily", decisions:["Client meeting confirmed for Friday","Bank financing approved"], actionItems:["Prepare floor plans","Print contract drafts","Submit 2 documents to bank by March 20"], topics:["Client","Meetings","Documents","Finance"] },
+    { id:"s3", groupId:"g3", date:"2026-03-13", type:"daily", decisions:["Client wants kitchen redesign"], actionItems:["Send kitchen design options to Rodriguez"], topics:["Design","Client Requests"] },
+  ];
+
   function showGroupDetail(gid) {
     const g = mockGroups.find(x=>x.id===gid);
     const msgs = mockMessages.filter(m=>m.groupId===gid);
@@ -1737,6 +1692,10 @@
       const el = document.getElementById(panelRightId);
       if(el) { el.classList.remove('mobile-visible'); }
     }
+  
+    // Initial render
+    renderHome();
+    renderGroupCards();
   </script>
 
 </body>
