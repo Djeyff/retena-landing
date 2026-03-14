@@ -1469,55 +1469,118 @@
     window.location.replace('/dashboard/login');
   }
 
-  // ── Mock data ──
+  // ── Mock data (spec-matched) ──
   const mockGroups = [
-    { id:"g1", name:"🏗️ Construcción Coral", members:15, status:"active", emoji:"🏗️", shortName:"Coral" },
-    { id:"g2", name:"📋 Management", members:8, status:"active", emoji:"📋", shortName:"Mgmt" },
-    { id:"g3", name:"💼 Cliente Rodriguez", members:5, status:"paused", emoji:"💼", shortName:"Rodriguez" },
+    { id:"g1", name:"🏗️ Construcción Coral", members:15, status:"active", emoji:"🏗️", shortName:"Coral", lastMessage:"2m ago", todayMsgs:47, todayVoice:12 },
+    { id:"g2", name:"📋 Management", members:8, status:"active", emoji:"📋", shortName:"Mgmt", lastMessage:"8m ago", todayMsgs:23, todayVoice:6 },
+    { id:"g3", name:"💼 Cliente Rodriguez", members:5, status:"paused", emoji:"💼", shortName:"Rodriguez", lastMessage:"2h ago", todayMsgs:3, todayVoice:1 },
+  ];
+  const mockMembers = [
+    { id:"m1", name:"Carlos Méndez", initials:"CM", phone:"+1 809 *-04", msgs:234, voice:67 },
+    { id:"m2", name:"Jean Pierre", initials:"JP", phone:"+1 829 *-12", msgs:189, voice:45 },
+    { id:"m3", name:"María López", initials:"ML", phone:"+1 809 *-88", msgs:156, voice:38 },
+    { id:"m4", name:"Roberto Santos", initials:"RS", phone:"+1 849 *-56", msgs:98, voice:23 },
+    { id:"m5", name:"Ana García", initials:"AG", phone:"+1 809 *-77", msgs:67, voice:12 },
   ];
   const mockMessages = [
-    { id:"msg1", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:47", text:"Hay que revisar los precios antes del lunes. El cemento subió 15 por ciento.", date:"Mar 14, 10:23", keyPoints:["Cement up 15%","Review before Monday"] },
-    { id:"msg3", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:12", text:"El cliente confirmó la reunión para el viernes a las 3. Necesitamos tener los planos listos.", date:"Mar 14, 09:15", keyPoints:["Client meeting Friday 3pm","Plans must be ready"] },
-    { id:"msg5", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:35", text:"Necesitamos revisar también el presupuesto del baño principal antes de cerrar.", date:"Mar 14, 10:45", keyPoints:["Bathroom budget needs review","Before closing"] },
-    { id:"msg9", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:34", text:"Acabo de hablar con el banco. El financiamiento está aprobado pero necesitan dos documentos más.", date:"Mar 14, 09:45", keyPoints:["Bank financing approved","2 docs needed by March 20"] },
-    { id:"msg7", groupId:"g3", sender:"Roberto Santos", initials:"RS", type:"voice", duration:"0:28", text:"El señor Rodriguez quiere cambiar el diseño de la cocina. Dice que vio algo en Pinterest que le gustó más.", date:"Mar 13, 16:20", keyPoints:["Client wants kitchen redesign"] },
+    { id:"msg1", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:47",
+      text:"Hay que revisar los precios antes del lunes. El cemento subió 15 por ciento.",
+      date:"2026-03-14T10:23:00", keyPoints:["Cement up 15%","Review before Monday"] },
+    { id:"msg2", groupId:"g1", sender:"Jean Pierre", initials:"JP", type:"text",
+      text:"OK, actualizo la cotización para el viernes", date:"2026-03-14T10:25:00" },
+    { id:"msg3", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:12",
+      text:"El cliente confirmó la reunión para el viernes a las 3. Necesitamos tener los planos listos.",
+      date:"2026-03-14T09:15:00", keyPoints:["Client meeting Friday 3pm","Plans must be ready"] },
+    { id:"msg4", groupId:"g1", sender:"Roberto Santos", initials:"RS", type:"text",
+      text:"Ya confirmé con el proveedor de azulejos. Entrega para jueves.", date:"2026-03-14T10:30:00" },
+    { id:"msg5", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:35",
+      text:"Perfecto lo de los azulejos. Necesitamos revisar también el presupuesto del baño principal antes de cerrar.",
+      date:"2026-03-14T10:45:00", keyPoints:["Bathroom budget needs review","Before closing"] },
+    { id:"msg6", groupId:"g2", sender:"Ana García", initials:"AG", type:"text",
+      text:"Envié los contratos por email. Revisar antes del viernes por favor.", date:"2026-03-14T09:30:00" },
+    { id:"msg7", groupId:"g3", sender:"Roberto Santos", initials:"RS", type:"voice", duration:"0:28",
+      text:"El señor Rodriguez quiere cambiar el diseño de la cocina. Dice que vio algo en Pinterest que le gustó más.",
+      date:"2026-03-13T16:20:00", keyPoints:["Client wants kitchen redesign","Pinterest inspiration"] },
+    { id:"msg8", groupId:"g1", sender:"Jean Pierre", initials:"JP", type:"text",
+      text:"El electricista viene mañana temprano. Necesitamos tener el área despejada.", date:"2026-03-14T11:00:00" },
+    { id:"msg9", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:34",
+      text:"Acabo de hablar con el banco. El financiamiento está aprobado pero necesitan dos documentos más. Hay que tenerlos antes del 20 de marzo.",
+      date:"2026-03-14T09:45:00", keyPoints:["Bank financing approved","2 more docs needed","Deadline March 20"] },
+    { id:"msg10", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"text",
+      text:"👍 perfecto. Le digo a los muchachos que preparen todo", date:"2026-03-14T11:05:00" },
+    { id:"msg11", groupId:"g3", sender:"Carlos Méndez", initials:"CM", type:"text",
+      text:"Le paso las opciones de cocina al cliente hoy", date:"2026-03-13T16:45:00" },
+    { id:"msg12", groupId:"g1", sender:"Ana García", initials:"AG", type:"voice", duration:"0:41",
+      text:"El permiso municipal sale la próxima semana. No hay problemas con la zonificación.",
+      date:"2026-03-14T11:30:00", keyPoints:["Municipal permit next week","No zoning issues"] },
   ];
   const mockPersonalNotes = [
-    { id:"p1", date:"Mar 14, 08:30 AM", duration:"0:34", lang:"🇪🇸", starred:false, text:"Recuerda llamar al dentista mañana a las 9. Y comprar el regalo para el cumpleaños de Ana el sábado.", keyPoints:["Call dentist tomorrow 9am","Buy Ana\'s birthday gift for Saturday"] },
-    { id:"p2", date:"Mar 13, 06:45 PM", duration:"1:29", lang:"🇫🇷", starred:true, text:"Bonjour, je voulais te parler du dossier médical de maman. Le médecin a dit qu\'elle doit prendre deux médicaments différents et revenir le mois prochain pour un contrôle.", keyPoints:["Mom needs two different medications","Follow-up appointment next month"] },
-    { id:"p3", date:"Mar 12, 02:20 PM", duration:"0:45", lang:"🇬🇧", starred:false, text:"Quick reminder about the insurance renewal. Deadline is March 20th. Need to send the signed form to the broker before then.", keyPoints:["Insurance renewal deadline March 20","Send signed form to broker"] },
-    { id:"p4", date:"Mar 11, 09:00 AM", duration:"1:02", lang:"🇪🇸", starred:false, text:"La reunión con el abogado es el jueves a las 2. Llevar todos los documentos del condominio y la carta de Guerrin.", keyPoints:["Lawyer meeting Thursday 2pm","Bring condo documents"] },
+    { id:"p1", date:"Mar 14, 08:30 AM", duration:"0:34", lang:"🇪🇸", starred:false,
+      text:"Recuerda llamar al dentista mañana a las 9. Y comprar el regalo para el cumpleaños de Ana el sábado.",
+      keyPoints:["Call dentist tomorrow 9am","Buy Ana birthday gift Saturday"] },
+    { id:"p2", date:"Mar 13, 06:45 PM", duration:"1:29", lang:"🇫🇷", starred:true,
+      text:"Bonjour, je voulais te parler du dossier médical de maman. Le médecin a dit qu elle doit prendre deux médicaments.",
+      keyPoints:["Mom needs two medications","Follow-up next month"] },
+    { id:"p3", date:"Mar 12, 02:20 PM", duration:"0:45", lang:"🇬🇧", starred:false,
+      text:"Quick reminder about the insurance renewal. Deadline is March 20th. Send the signed form to the broker.",
+      keyPoints:["Insurance renewal March 20","Send signed form to broker"] },
+    { id:"p4", date:"Mar 11, 09:00 AM", duration:"1:02", lang:"🇪🇸", starred:false,
+      text:"La reunión con el abogado es el jueves a las 2. Llevar todos los documentos del condominio.",
+      keyPoints:["Lawyer meeting Thursday 2pm","Bring condo documents"] },
   ];
-
   // ── Group detail ──
   function showGroupDetail(gid) {
     const g = mockGroups.find(x=>x.id===gid);
     const msgs = mockMessages.filter(m=>m.groupId===gid);
+    const voiceMsgs = msgs.filter(m=>m.type==="voice");
     const d = document.getElementById('group-detail');
+    d.style.display="block"; d.style.alignItems="flex-start"; d.style.justifyContent="flex-start";
     d.innerHTML = `
-      <div style="width:100%;max-width:500px">
+      <div style="width:100%;max-width:560px">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)">
           <div style="width:48px;height:48px;border-radius:12px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:22px">${g.emoji}</div>
-          <div style="flex:1"><h3 style="font-size:15px;font-weight:600;color:#fff;margin:0 0 3px">${g.name}</h3><p style="font-size:12px;color:#64748b;margin:0">${g.members} members · Connected since Mar 1</p></div>
+          <div style="flex:1">
+            <h3 style="font-size:15px;font-weight:600;color:#fff;margin:0 0 3px">${g.name}</h3>
+            <p style="font-size:12px;color:#64748b;margin:0">${g.members} members · ${g.lastMessage}</p>
+          </div>
           <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:${g.status==='active'?'rgba(34,197,94,.1)':'rgba(245,158,11,.1)'};color:${g.status==='active'?'#4ade80':'#f59e0b'};border:1px solid ${g.status==='active'?'rgba(34,197,94,.2)':'rgba(245,158,11,.2)'}">${g.status==='active'?'Active':'Paused'}</span>
         </div>
-        <div style="display:flex;gap:16px;margin-bottom:18px">
-          <div style="text-align:center"><p style="font-size:18px;font-weight:600;color:#fff;margin:0">${msgs.length}</p><p style="font-size:11px;color:#64748b;margin:0">Transcripts</p></div>
-          <div style="text-align:center"><p style="font-size:18px;font-weight:600;color:#fff;margin:0">47</p><p style="font-size:11px;color:#64748b;margin:0">Today msgs</p></div>
+        <div style="display:flex;gap:20px;margin-bottom:18px">
+          <div style="text-align:center"><p style="font-size:20px;font-weight:700;color:#fff;margin:0">${g.todayMsgs}</p><p style="font-size:11px;color:#64748b;margin:0">Today msgs</p></div>
+          <div style="text-align:center"><p style="font-size:20px;font-weight:700;color:#E67E22;margin:0">${g.todayVoice}</p><p style="font-size:11px;color:#64748b;margin:0">Voice notes</p></div>
+          <div style="text-align:center"><p style="font-size:20px;font-weight:700;color:#fff;margin:0">${g.members}</p><p style="font-size:11px;color:#64748b;margin:0">Members</p></div>
         </div>
         <div style="margin-bottom:16px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:12px">
-          <p style="font-size:12px;font-weight:600;color:#94a3b8;margin:0 0 10px;text-transform:uppercase;letter-spacing:.5px">Recent voice notes</p>
-          ${msgs.map(m=>`<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);last-child:border:none"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="font-size:11px;color:#94a3b8">${m.sender}</span><span style="font-size:11px;background:#1e2a3a;color:#64748b;padding:1px 5px;border-radius:4px">${m.duration}</span><span style="font-size:11px;color:#64748b;margin-left:auto">${m.date}</span></div><p style="font-size:12px;color:#cbd5e1;margin:0">${m.text}</p></div>`).join('')}
+          <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px">Recent voice notes</p>
+          ${voiceMsgs.slice(0,4).map(m=>`
+            <div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+                <span style="font-size:11px;color:#94a3b8">${m.sender}</span>
+                <span style="font-size:11px;background:#1e2a3a;color:#64748b;padding:1px 5px;border-radius:4px">${m.duration}</span>
+                <span style="font-size:11px;color:#64748b;margin-left:auto">${new Date(m.date).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span>
+              </div>
+              <p style="font-size:12px;color:#cbd5e1;margin:0">${m.text}</p>
+              ${m.keyPoints ? '<p style="font-size:11px;color:#64748b;margin:3px 0 0">→ '+m.keyPoints.join(' · ')+'</p>' : ''}
+            </div>`).join('')}
+          ${voiceMsgs.length===0?'<p style="font-size:13px;color:#64748b;text-align:center;padding:12px 0">No voice notes yet</p>':''}
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:10px">
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:12px;margin-bottom:14px">
+          <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px">Top contributors</p>
+          ${mockMembers.slice(0,4).map(m=>`
+            <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)">
+              <div style="width:28px;height:28px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:600">${m.initials}</div>
+              <span style="font-size:12px;color:#cbd5e1;flex:1">${m.name}</span>
+              <span style="font-size:11px;color:#64748b">${m.voice} voice</span>
+            </div>`).join('')}
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:10px">
           <span style="font-size:12px;color:#64748b">Capture:</span>
-          <button onclick="this.style.background=this.style.background==='rgb(34,197,94)'?'#f59e0b':'#22c55e'" style="position:relative;width:36px;height:18px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:14px;height:14px;background:#fff;border-radius:50%"></span></button>
-          <span style="font-size:12px;color:#4ade80">Active</span>
+          <button onclick="this.dataset.on=this.dataset.on==='1'?'0':'1';this.style.background=this.dataset.on==='1'?'#22c55e':'#2a3a54';this.nextElementSibling.textContent=this.dataset.on==='1'?'Active':'Paused'" data-on="${g.status==='active'?'1':'0'}" style="position:relative;width:36px;height:18px;border-radius:20px;background:${g.status==='active'?'#22c55e':'#2a3a54'};border:none;cursor:pointer"><span style="position:absolute;top:2px;${g.status==='active'?'right':'left'}:2px;width:14px;height:14px;background:#fff;border-radius:50%"></span></button>
+          <span style="font-size:12px;color:${g.status==='active'?'#4ade80':'#f59e0b'}">${g.status==='active'?'Active':'Paused'}</span>
         </div>
-        <button style="font-size:12px;color:#ef4444;background:none;border:none;cursor:pointer;padding:0">Disconnect group</button>
+        <button onclick="this.style.display='none'" style="font-size:12px;color:#ef4444;background:none;border:none;cursor:pointer;padding:0">Disconnect group</button>
       </div>`;
   }
-
   // ── Personal inbox note detail ──
   function showPersonalNote(idx) {
     const n = mockPersonalNotes[idx];
