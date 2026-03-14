@@ -473,6 +473,10 @@
         </svg>
         <span class="label-text">Groups</span>
       </button>
+      <button class="nav-item" data-section="personal" onclick="navigate('personal', this)">
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162" /></svg>
+        <span class="nav-label label-text">Personal Inbox</span>
+      </button>
       <button class="nav-item" data-section="search" onclick="navigate('search', this)">
         <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -596,24 +600,72 @@
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-label">Groups connected</div>
-            <div class="stat-val">0</div>
-            <div class="stat-sub">Add your first group to start</div>
+            <div class="stat-val">3</div>
+            <div class="stat-sub">2 active · 1 paused</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Voice notes captured</div>
-            <div class="stat-val">0</div>
+            <div class="stat-val">18</div>
             <div class="stat-sub">This month</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">AI searches</div>
-            <div class="stat-val">0</div>
+            <div class="stat-val">5</div>
             <div class="stat-sub">This month</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Summaries sent</div>
-            <div class="stat-val">0</div>
+            <div class="stat-val">3</div>
             <div class="stat-sub">This week</div>
           </div>
+        </div>
+
+        <!-- Today's Briefing -->
+        <div class="section-hdr" style="margin-top:20px"><span class="section-title">Today's Briefing</span></div>
+
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:12px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <h4 style="font-size:14px;font-weight:600;color:#fff;margin:0">🏗️ Construcción Coral</h4>
+            <span style="font-size:12px;color:#64748b">47 msgs · 12 voice</span>
+          </div>
+          <div style="margin-bottom:10px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key decisions</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Cement budget increased 15%</li>
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Jean updating quote by Friday</li>
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Tile delivery confirmed for Thursday</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Action items</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Update budget spreadsheet</li>
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Clear area for electrician tomorrow</li>
+            </ul>
+          </div>
+          <a onclick="navigate('summaries', document.querySelector('[data-section=summaries]'))" style="font-size:12px;color:#E67E22;text-decoration:none;margin-top:8px;display:inline-block;cursor:pointer">View full summary →</a>
+        </div>
+
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:12px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <h4 style="font-size:14px;font-weight:600;color:#fff;margin:0">📋 Management</h4>
+            <span style="font-size:12px;color:#64748b">23 msgs · 6 voice</span>
+          </div>
+          <div style="margin-bottom:10px">
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key decisions</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Client meeting confirmed for Friday 3pm</li>
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Bank financing approved</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Action items</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Prepare floor plans for meeting</li>
+              <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Submit 2 documents to bank by March 20</li>
+            </ul>
+          </div>
+          <a onclick="navigate('summaries', document.querySelector('[data-section=summaries]'))" style="font-size:12px;color:#E67E22;text-decoration:none;margin-top:8px;display:inline-block;cursor:pointer">View full summary →</a>
         </div>
 
 <div class="bg-gray-800 rounded-xl border border-gray-700 p-4 flex items-center justify-between mb-4" id="vozclara-tip" style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
@@ -630,78 +682,603 @@
           </div>
         </div>
 
-                <div class="section-hdr">
-          <span class="section-title">Recent activity</span>
-        </div>
-        <div class="empty-state">
-          <div class="empty-icon">🔊</div>
-          <div class="empty-title">No activity yet</div>
-          <div class="empty-sub">Add Retena's number to a WhatsApp group to start capturing voice notes and messages.</div>
-          <button class="btn-empty" onclick="navigate('groups', document.querySelector('[data-section=groups]'))">Connect your first group →</button>
+                <div class="section-hdr" style="margin-top:20px"><span class="section-title">Recent activity</span></div>
+
+        <!-- Recent messages feed -->
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">CM</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:500;color:#fff">Carlos Méndez</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
+                <span style="font-size:11px;color:#64748b">2m ago</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span style="font-size:11px;color:#64748b">0:47</span>
+                <p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Hay que revisar los precios antes del lunes. El cemento subió 15%...</p>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">JP</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:500;color:#fff">Jean Pierre</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
+                <span style="font-size:11px;color:#64748b">8m ago</span>
+              </div>
+              <p style="font-size:13px;color:#cbd5e1;margin:0">OK, actualizo la cotización para el viernes</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">ML</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:500;color:#fff">María López</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span>
+                <span style="font-size:11px;color:#64748b">12m ago</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span style="font-size:11px;color:#64748b">1:12</span>
+                <p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">El cliente confirmó la reunión para el viernes a las 3...</p>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">RS</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:500;color:#fff">Roberto Santos</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
+                <span style="font-size:11px;color:#64748b">20m ago</span>
+              </div>
+              <p style="font-size:13px;color:#cbd5e1;margin:0">Ya confirmé con el proveedor de azulejos. Entrega para jueves.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;padding:12px 0">
+            <div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">AG</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+                <span style="font-size:13px;font-weight:500;color:#fff">Ana García</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span>
+                <span style="font-size:11px;color:#64748b">28m ago</span>
+              </div>
+              <p style="font-size:13px;color:#cbd5e1;margin:0">Envié los contratos por email. Revisar antes del viernes por favor.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- GROUPS -->
       <div class="panel-section" id="section-groups">
-        <div class="empty-state">
-          <div class="empty-icon">👥</div>
-          <div class="empty-title">No groups connected</div>
-          <div class="empty-sub">Add Retena's WhatsApp number to any group, or scan a QR code to connect it.</div>
-          <button class="btn-empty">Connect a group →</button>
+        <div style="display:flex;gap:0;height:calc(100vh - 120px);overflow:hidden">
+          <!-- Left: group list -->
+          <div style="width:280px;min-width:280px;border-right:1px solid rgba(255,255,255,.07);overflow-y:auto;padding:12px">
+            <!-- New group detected -->
+            <div style="background:rgba(230,126,34,.08);border:1px solid rgba(230,126,34,.2);border-radius:12px;padding:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:38px;height:38px;border-radius:10px;background:rgba(230,126,34,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🆕</div>
+                <div>
+                  <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 2px">New: "🏗️ Proyecto Norte"</p>
+                  <p style="font-size:11px;color:#94a3b8;margin:0">Added to this group. Start capturing?</p>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <button onclick="this.closest('div').parentElement.remove()" style="font-size:11px;background:#E67E22;color:#fff;border:none;padding:4px 10px;border-radius:6px;cursor:pointer">Start</button>
+                <button onclick="this.closest('div').parentElement.remove()" style="font-size:11px;background:none;color:#94a3b8;border:1px solid #334155;padding:4px 10px;border-radius:6px;cursor:pointer">Ignore</button>
+              </div>
+            </div>
+            <!-- Group cards -->
+            <button onclick="showGroupDetail('g1')" id="gcard-g1" class="group-card" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🏗️</div>
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:13px;font-weight:500;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Construcción Coral</span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
+                    <span>15 members</span><span>·</span><span>2m ago</span>
+                  </div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <p style="font-size:11px;color:#94a3b8;margin:0">47 msgs</p>
+                  <p style="font-size:11px;color:#64748b;margin:0">12 voice</p>
+                </div>
+              </div>
+            </button>
+            <button onclick="showGroupDetail('g2')" id="gcard-g2" class="group-card" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📋</div>
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:13px;font-weight:500;color:#fff">Management</span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
+                    <span>8 members</span><span>·</span><span>8m ago</span>
+                  </div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <p style="font-size:11px;color:#94a3b8;margin:0">23 msgs</p>
+                  <p style="font-size:11px;color:#64748b;margin:0">6 voice</p>
+                </div>
+              </div>
+            </button>
+            <button onclick="showGroupDetail('g3')" id="gcard-g3" class="group-card" style="width:100%;text-align:left;padding:12px;background:none;border-radius:8px;cursor:pointer;border:none;margin-bottom:2px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:40px;height:40px;border-radius:10px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💼</div>
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:13px;font-weight:500;color:#fff">Cliente Rodriguez</span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0"></span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b">
+                    <span>5 members</span><span>·</span><span>2h ago</span>
+                  </div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <p style="font-size:11px;color:#94a3b8;margin:0">3 msgs</p>
+                  <p style="font-size:11px;color:#64748b;margin:0">1 voice</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <!-- Right: detail panel -->
+          <div id="group-detail" style="flex:1;overflow-y:auto;padding:20px;display:flex;align-items:center;justify-content:center">
+            <div style="text-align:center;color:#64748b">
+              <div style="font-size:36px;margin-bottom:12px">👈</div>
+              <p style="font-size:14px">Select a group to view details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL INBOX -->
+      <div class="panel-section" id="section-personal">
+        <div style="display:flex;gap:0;height:calc(100vh - 120px);overflow:hidden">
+          <!-- Left: note list -->
+          <div style="width:300px;min-width:300px;border-right:1px solid rgba(255,255,255,.07);overflow-y:auto">
+            <!-- Filters -->
+            <div style="padding:12px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:6px;flex-wrap:wrap">
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1e3a5f;color:#60a5fa;border:none;cursor:pointer">All</button>
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">⭐ Starred</button>
+              <select style="font-size:11px;padding:4px 8px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">
+                <option>All languages</option><option>🇪🇸 ES</option><option>🇫🇷 FR</option><option>🇬🇧 EN</option>
+              </select>
+            </div>
+            <!-- Note cards -->
+            <button onclick="showPersonalNote(0)" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border:none;cursor:pointer">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <span style="font-size:11px;color:#64748b">Mar 14, 08:30 AM</span>
+                    <span style="font-size:11px;background:#1a2234;color:#64748b;padding:2px 6px;border-radius:4px">0:34</span>
+                    <span style="font-size:12px">🇪🇸</span>
+                    <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                  </div>
+                  <p style="font-size:13px;color:#e2e8f0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Recuerda llamar al dentista mañana a las 9...</p>
+                </div>
+                <span style="color:#64748b;font-size:16px;flex-shrink:0">☆</span>
+              </div>
+            </button>
+            <button onclick="showPersonalNote(1)" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border:none;cursor:pointer">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <span style="font-size:11px;color:#64748b">Mar 13, 06:45 PM</span>
+                    <span style="font-size:11px;background:#1a2234;color:#64748b;padding:2px 6px;border-radius:4px">1:29</span>
+                    <span style="font-size:12px">🇫🇷</span>
+                    <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                  </div>
+                  <p style="font-size:13px;color:#e2e8f0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Bonjour, je voulais te parler du dossier médical...</p>
+                </div>
+                <span style="color:#E67E22;font-size:16px;flex-shrink:0">★</span>
+              </div>
+            </button>
+            <button onclick="showPersonalNote(2)" style="width:100%;text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);background:none;border:none;cursor:pointer">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <span style="font-size:11px;color:#64748b">Mar 12, 02:20 PM</span>
+                    <span style="font-size:11px;background:#1a2234;color:#64748b;padding:2px 6px;border-radius:4px">0:45</span>
+                    <span style="font-size:12px">🇬🇧</span>
+                    <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                  </div>
+                  <p style="font-size:13px;color:#e2e8f0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Quick reminder about the insurance renewal...</p>
+                </div>
+                <span style="color:#64748b;font-size:16px;flex-shrink:0">☆</span>
+              </div>
+            </button>
+            <button onclick="showPersonalNote(3)" style="width:100%;text-align:left;padding:12px;background:none;border:none;cursor:pointer">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                    <span style="font-size:11px;color:#64748b">Mar 11, 09:00 AM</span>
+                    <span style="font-size:11px;background:#1a2234;color:#64748b;padding:2px 6px;border-radius:4px">1:02</span>
+                    <span style="font-size:12px">🇪🇸</span>
+                    <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                  </div>
+                  <p style="font-size:13px;color:#e2e8f0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">La reunión con el abogado es el jueves a las 2...</p>
+                </div>
+                <span style="color:#64748b;font-size:16px;flex-shrink:0">☆</span>
+              </div>
+            </button>
+          </div>
+          <!-- Right: detail -->
+          <div id="personal-detail" style="flex:1;overflow-y:auto;padding:24px;display:flex;align-items:center;justify-content:center">
+            <div style="text-align:center;max-width:320px">
+              <div style="font-size:40px;margin-bottom:16px">📱</div>
+              <p style="font-size:15px;font-weight:500;color:#fff;margin:0 0 8px">Forward voice notes here</p>
+              <p style="font-size:13px;color:#94a3b8;margin:0 0 16px">Forward any voice note from your WhatsApp chats to Retena's number. It appears here, transcribed and searchable.</p>
+              <div style="background:#1e2a3a;border:1px solid #2a3a54;border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <span style="color:#fff;font-family:monospace;font-size:15px">+1 (350) 223-9900</span>
+                <button onclick="navigator.clipboard.writeText('+13502239900')" style="font-size:11px;color:#E67E22;background:none;border:none;cursor:pointer">Copy</button>
+              </div>
+              <p style="font-size:11px;color:#64748b">Counts against your voice minutes — no extra charge.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- AI SEARCH -->
       <div class="panel-section" id="section-search">
-        <div class="empty-state">
-          <div class="empty-icon">🔍</div>
-          <div class="empty-title">AI Search</div>
-          <div class="empty-sub">Search across your entire group history with natural language. Connect a group first to get started.</div>
+        <div style="max-width:720px;margin:0 auto;padding:8px 0 24px">
+          <!-- Search header -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+            <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0">AI Search</h2>
+            <span style="font-size:12px;color:#64748b">5 of 50 AI queries this month</span>
+          </div>
+          <div style="position:relative;margin-bottom:8px">
+            <input id="ai-search-input" type="text" placeholder="What did we decide about the bathroom tiles budget?" onkeydown="handleAISearch(event)"
+              style="width:100%;box-sizing:border-box;background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px 48px 14px 16px;font-size:14px;color:#fff;outline:none">
+            <button onclick="triggerAISearch()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5C8F" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+          </div>
+          <p style="font-size:11px;color:#64748b;margin:0 0 20px">Search in any language — finds messages in groups AND personal notes</p>
+
+          <!-- Filters row -->
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px">
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1e3a5f;color:#60a5fa;border:none;cursor:pointer">All sources</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">🏗️ Coral</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">📋 Mgmt</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">💼 Rodriguez</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2);cursor:pointer">Personal</button>
+          </div>
+
+          <!-- Results container -->
+          <div id="search-results"></div>
+
+          <!-- Initial suggestions -->
+          <div id="search-suggestions">
+            <p style="font-size:12px;color:#64748b;margin:0 0 12px">Try asking:</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button onclick="document.getElementById('ai-search-input').value='bathroom tiles budget';triggerAISearch()" style="text-align:left;padding:12px 14px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;color:#cbd5e1;font-size:13px;cursor:pointer">💬 What did we decide about the bathroom tiles budget?</button>
+              <button onclick="document.getElementById('ai-search-input').value='mom medical';triggerAISearch()" style="text-align:left;padding:12px 14px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;color:#cbd5e1;font-size:13px;cursor:pointer">💬 mom medical appointment details</button>
+              <button onclick="document.getElementById('ai-search-input').value='financing bank documents';triggerAISearch()" style="text-align:left;padding:12px 14px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;color:#cbd5e1;font-size:13px;cursor:pointer">💬 What documents did the bank need for financing?</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- SUMMARIES -->
       <div class="panel-section" id="section-summaries">
-        <div class="empty-state">
-          <div class="empty-icon">📋</div>
-          <div class="empty-title">No summaries yet</div>
-          <div class="empty-sub">Daily and weekly summaries appear here once your groups are active.</div>
+        <div style="max-width:720px;margin:0 auto;padding:8px 0 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+            <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0">Summaries</h2>
+            <div style="display:flex;gap:8px;align-items:center">
+              <input type="date" value="2026-03-14" style="font-size:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:8px;padding:5px 10px;color:#cbd5e1;outline:none">
+              <div style="display:flex;border:1px solid #2a3a54;border-radius:8px;overflow:hidden">
+                <button style="font-size:11px;padding:5px 12px;background:#1e3a5f;color:#60a5fa;border:none;cursor:pointer">Daily</button>
+                <button style="font-size:11px;padding:5px 12px;background:none;color:#64748b;border:none;cursor:pointer">Weekly</button>
+              </div>
+            </div>
+          </div>
+          <!-- Summary card: Construcción Coral -->
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:18px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div>
+                <h3 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 4px">🏗️ Construcción Coral</h3>
+                <p style="font-size:11px;color:#64748b;margin:0">March 14, 2026 · 47 messages · 12 voice notes</p>
+              </div>
+              <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:6px 12px;border-radius:8px;cursor:pointer">Export PDF</button>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Budget</span>
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Materials</span>
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Timeline</span>
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Permits</span>
+            </div>
+            <div style="margin-bottom:12px">
+              <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Key decisions</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Cement budget increased 15%</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Jean updating quote by Friday</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Tile delivery confirmed for Thursday</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Action items</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Update budget spreadsheet</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Confirm new supplier prices</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Clear area for electrician tomorrow</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Summary card: Management -->
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:18px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div>
+                <h3 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 4px">📋 Management</h3>
+                <p style="font-size:11px;color:#64748b;margin:0">March 14, 2026 · 23 messages · 6 voice notes</p>
+              </div>
+              <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:6px 12px;border-radius:8px;cursor:pointer">Export PDF</button>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Client</span>
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Finance</span>
+              <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:#1e2a3a;color:#94a3b8;border:1px solid #2a3a54">Documents</span>
+            </div>
+            <div style="margin-bottom:12px">
+              <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Key decisions</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Client meeting confirmed for Friday 3pm</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>Bank financing approved</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">Action items</p>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Prepare floor plans for Friday meeting</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Submit 2 documents to bank by March 20</li>
+                <li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#E67E22">☐</span>Print contract drafts</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- TRANSCRIPTS -->
       <div class="panel-section" id="section-transcripts">
-        <div class="empty-state">
-          <div class="empty-icon">🎙</div>
-          <div class="empty-title">No transcripts yet</div>
-          <div class="empty-sub">Voice notes from your connected groups will be transcribed and appear here automatically.</div>
+        <div style="max-width:720px;margin:0 auto;padding:8px 0 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+            <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0">All Transcripts <span style="font-size:12px;color:#64748b;font-weight:400">18 voice notes</span></h2>
+          </div>
+          <!-- Filter bar -->
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1e3a5f;color:#60a5fa;border:none;cursor:pointer">All</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">🏗️ Coral</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">📋 Mgmt</button>
+            <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2);cursor:pointer">Personal</button>
+            <select style="font-size:11px;padding:4px 8px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">
+              <option>All languages</option><option>🇪🇸 ES</option><option>🇫🇷 FR</option><option>🇬🇧 EN</option>
+            </select>
+            <select style="font-size:11px;padding:4px 8px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">
+              <option>All durations</option><option>Short &lt;30s</option><option>Medium 30-90s</option><option>Long &gt;90s</option>
+            </select>
+          </div>
+          <!-- Transcript items -->
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div onclick="this.querySelector('.tx-expand').style.display=this.querySelector('.tx-expand').style.display==='none'?'block':'none'" style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:14px;cursor:pointer">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span style="font-size:11px;color:#94a3b8;background:#1e2a3a;padding:2px 6px;border-radius:4px">0:47</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1e2a3a;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span>
+                <span style="font-size:11px;color:#94a3b8">Carlos Méndez</span>
+                <span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14, 10:23</span>
+              </div>
+              <p style="font-size:13px;color:#e2e8f0;margin:0;line-height:1.5">Hay que revisar los precios antes del lunes. El cemento subió 15 por ciento.</p>
+              <div class="tx-expand" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)">
+                <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key points</p>
+                <ul style="list-style:none;padding:0;margin:0 0 10px;display:flex;flex-direction:column;gap:3px">
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Cement up 15%</li>
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Review before Monday</li>
+                </ul>
+                <div style="display:flex;gap:8px">
+                  <button onclick="navigator.clipboard.writeText(this.closest('.tx-expand').previousElementSibling.textContent)" style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:4px 10px;border-radius:6px;cursor:pointer">Copy</button>
+                  <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:4px 10px;border-radius:6px;cursor:pointer">Download</button>
+                </div>
+              </div>
+            </div>
+            <div onclick="this.querySelector('.tx-expand').style.display=this.querySelector('.tx-expand').style.display==='none'?'block':'none'" style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:14px;cursor:pointer">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span style="font-size:11px;color:#94a3b8;background:#1e2a3a;padding:2px 6px;border-radius:4px">1:12</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1e2a3a;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span>
+                <span style="font-size:11px;color:#94a3b8">María López</span>
+                <span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14, 09:15</span>
+              </div>
+              <p style="font-size:13px;color:#e2e8f0;margin:0;line-height:1.5">El cliente confirmó la reunión para el viernes a las 3. Necesitamos tener los planos listos.</p>
+              <div class="tx-expand" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)">
+                <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key points</p>
+                <ul style="list-style:none;padding:0;margin:0 0 10px">
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Client meeting Friday 3pm</li>
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Plans must be ready</li>
+                </ul>
+                <div style="display:flex;gap:8px">
+                  <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:4px 10px;border-radius:6px;cursor:pointer">Copy</button>
+                  <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:4px 10px;border-radius:6px;cursor:pointer">Download</button>
+                </div>
+              </div>
+            </div>
+            <div onclick="this.querySelector('.tx-expand').style.display=this.querySelector('.tx-expand').style.display==='none'?'block':'none'" style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:14px;cursor:pointer">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span style="font-size:11px;color:#94a3b8;background:#1e2a3a;padding:2px 6px;border-radius:4px">1:29</span>
+                <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                <span style="font-size:12px">🇫🇷</span>
+                <span style="font-size:11px;color:#64748b;margin-left:auto">Mar 13, 18:45</span>
+              </div>
+              <p style="font-size:13px;color:#e2e8f0;margin:0;line-height:1.5">Bonjour, je voulais te parler du dossier médical de maman. Le médecin a dit qu'elle doit prendre deux médicaments différents...</p>
+              <div class="tx-expand" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06)">
+                <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px">Key points</p>
+                <ul style="list-style:none;padding:0;margin:0 0 10px">
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Mom needs two different medications</li>
+                  <li style="font-size:12px;color:#94a3b8;display:flex;gap:6px"><span style="color:#2A5C8F">•</span>Follow-up appointment next month</li>
+                </ul>
+                <div style="display:flex;gap:8px">
+                  <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:4px 10px;border-radius:6px;cursor:pointer">Copy</button>
+                  <button onclick="navigate('personal', document.querySelector('[data-section=personal]'))" style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#c084fc;padding:4px 10px;border-radius:6px;cursor:pointer">View in Personal Inbox</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- ACTIVITY -->
       <div class="panel-section" id="section-activity">
-        <div class="empty-state">
-          <div class="empty-icon">⚡</div>
-          <div class="empty-title">No activity yet</div>
-          <div class="empty-sub">All Retena events — transcriptions, summaries, searches — are logged here.</div>
+        <div style="max-width:720px;margin:0 auto;padding:8px 0 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+            <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0">Activity Feed</h2>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1e3a5f;color:#60a5fa;border:none;cursor:pointer">All</button>
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">Voice only</button>
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">🏗️ Coral</button>
+              <button style="font-size:11px;padding:4px 10px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54;cursor:pointer">📋 Mgmt</button>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">CM</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px"><span style="font-size:13px;font-weight:500;color:#fff">Carlos Méndez</span><span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span><span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14 · 11:30</span></div><div style="display:flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg><span style="font-size:11px;color:#64748b">0:41</span><p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">El permiso municipal sale la próxima semana. No hay problemas con la zonificación.</p></div></div></div>
+            <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">JP</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px"><span style="font-size:13px;font-weight:500;color:#fff">Jean Pierre</span><span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span><span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14 · 11:00</span></div><p style="font-size:13px;color:#cbd5e1;margin:0">El electricista viene mañana temprano. Necesitamos tener el área despejada.</p></div></div>
+            <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">CM</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px"><span style="font-size:13px;font-weight:500;color:#fff">Carlos Méndez</span><span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">🏗️ Coral</span><span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14 · 10:45</span></div><div style="display:flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg><span style="font-size:11px;color:#64748b">0:35</span><p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Necesitamos revisar también el presupuesto del baño principal antes de cerrar.</p></div></div></div>
+            <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">ML</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px"><span style="font-size:13px;font-weight:500;color:#fff">María López</span><span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span><span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14 · 09:45</span></div><div style="display:flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg><span style="font-size:11px;color:#64748b">1:34</span><p style="font-size:13px;color:#cbd5e1;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Acabo de hablar con el banco. El financiamiento está aprobado pero necesitan dos documentos más.</p></div></div></div>
+            <div style="display:flex;gap:12px;padding:12px 0"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600;flex-shrink:0">AG</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px"><span style="font-size:13px;font-weight:500;color:#fff">Ana García</span><span style="font-size:11px;padding:2px 6px;border-radius:20px;background:#1a2234;color:#64748b;border:1px solid #2a3a54">📋 Mgmt</span><span style="font-size:11px;color:#64748b;margin-left:auto">Mar 14 · 09:30</span></div><p style="font-size:13px;color:#cbd5e1;margin:0">Envié los contratos por email. Revisar antes del viernes por favor.</p></div></div>
+          </div>
         </div>
       </div>
 
       <!-- EXPORTS -->
       <div class="panel-section" id="section-exports">
-        <div class="empty-state">
-          <div class="empty-icon">📤</div>
-          <div class="empty-title">No exports yet</div>
-          <div class="empty-sub">Export your group transcripts and summaries as PDF or CSV.</div>
+        <div style="max-width:640px;margin:0 auto;padding:8px 0 24px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+            <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0">Exports</h2>
+            <button id="new-export-btn" onclick="document.getElementById('export-modal').style.display='flex'" style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:8px 14px;border-radius:8px;cursor:pointer">+ Generate export</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:20px">📄</span>
+              <div style="flex:1">
+                <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 3px">Weekly Report — Mar 8–14, 2026</p>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)">PDF</span>
+                  <span style="font-size:11px;color:#64748b">245 KB · Mar 14, 2026</span>
+                </div>
+              </div>
+              <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#60a5fa;padding:6px 12px;border-radius:6px;cursor:pointer">↓ Download</button>
+            </div>
+            <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:20px">📊</span>
+              <div style="flex:1">
+                <p style="font-size:13px;font-weight:500;color:#fff;margin:0 0 3px">Construcción Coral — All Messages</p>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">CSV</span>
+                  <span style="font-size:11px;color:#64748b">1.2 MB · Mar 13, 2026</span>
+                </div>
+              </div>
+              <button style="font-size:11px;background:#1e2a3a;border:1px solid #2a3a54;color:#60a5fa;padding:6px 12px;border-radius:6px;cursor:pointer">↓ Download</button>
+            </div>
+          </div>
+        </div>
+        <!-- Export modal -->
+        <div id="export-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center">
+          <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:16px;padding:24px;width:400px;max-width:90vw">
+            <h3 style="font-size:15px;font-weight:600;color:#fff;margin:0 0 16px">Generate New Export</h3>
+            <div style="margin-bottom:12px">
+              <label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Date range</label>
+              <div style="display:flex;gap:8px"><input type="date" value="2026-03-08" style="flex:1;font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;border-radius:8px;padding:6px 10px;color:#cbd5e1;outline:none"><input type="date" value="2026-03-14" style="flex:1;font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;border-radius:8px;padding:6px 10px;color:#cbd5e1;outline:none"></div>
+            </div>
+            <div style="margin-bottom:12px">
+              <label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Groups</label>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <label style="font-size:12px;color:#cbd5e1;display:flex;align-items:center;gap:4px"><input type="checkbox" checked> 🏗️ Coral</label>
+                <label style="font-size:12px;color:#cbd5e1;display:flex;align-items:center;gap:4px"><input type="checkbox" checked> 📋 Mgmt</label>
+                <label style="font-size:12px;color:#cbd5e1;display:flex;align-items:center;gap:4px"><input type="checkbox"> 💼 Rodriguez</label>
+              </div>
+            </div>
+            <div style="margin-bottom:16px">
+              <label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Format</label>
+              <div style="display:flex;gap:8px">
+                <label style="font-size:12px;color:#cbd5e1;display:flex;align-items:center;gap:4px"><input type="radio" name="fmt" checked> PDF</label>
+                <label style="font-size:12px;color:#cbd5e1;display:flex;align-items:center;gap:4px"><input type="radio" name="fmt"> CSV</label>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;justify-content:flex-end">
+              <button onclick="document.getElementById('export-modal').style.display='none'" style="font-size:12px;background:none;border:1px solid #2a3a54;color:#94a3b8;padding:8px 16px;border-radius:8px;cursor:pointer">Cancel</button>
+              <button onclick="document.getElementById('export-modal').style.display='none'" style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer">Generate</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- SETTINGS -->
       <div class="panel-section" id="section-settings">
-        <div class="empty-state">
-          <div class="empty-icon">⚙️</div>
-          <div class="empty-title">Settings</div>
-          <div class="empty-sub">Workspace, team, billing, and integrations — coming soon.</div>
+        <div style="max-width:640px;margin:0 auto;padding:8px 0 24px">
+          <h2 style="font-size:16px;font-weight:600;color:#fff;margin:0 0 16px">Settings</h2>
+          <!-- Tab bar -->
+          <div style="display:flex;gap:0;border-bottom:1px solid #2a3a54;margin-bottom:20px;overflow-x:auto">
+            <button onclick="showSettingsTab('workspace',this)" class="stab active" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#60a5fa;border-bottom:2px solid #2A5C8F;cursor:pointer;white-space:nowrap">Workspace</button>
+            <button onclick="showSettingsTab('groups-s',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Groups</button>
+            <button onclick="showSettingsTab('team',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Team</button>
+            <button onclick="showSettingsTab('billing',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Billing</button>
+            <button onclick="showSettingsTab('notifications',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Notifications</button>
+            <button onclick="showSettingsTab('integrations',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Integrations</button>
+            <button onclick="showSettingsTab('security',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Security</button>
+            <button onclick="showSettingsTab('api',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#64748b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">API</button>
+            <button onclick="showSettingsTab('danger',this)" class="stab" style="font-size:12px;padding:8px 14px;background:none;border:none;color:#ef4444;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap">Danger zone</button>
+          </div>
+          <!-- Tab content -->
+          <div id="stab-workspace">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Workspace name</label><input type="text" value="Constructora Coral" style="width:100%;box-sizing:border-box;background:#1a2234;border:1px solid #2a3a54;border-radius:8px;padding:8px 12px;font-size:13px;color:#fff;outline:none"></div>
+              <div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Timezone</label><select style="width:100%;background:#1a2234;border:1px solid #2a3a54;border-radius:8px;padding:8px 12px;font-size:13px;color:#fff;outline:none"><option>America/Santo_Domingo (UTC-4)</option><option>America/New_York (UTC-5)</option></select></div>
+              <div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Workspace ID <span style="color:#64748b">(read-only)</span></label><input type="text" value="rt_0f3e8026-f3be-4f10" readonly style="width:100%;box-sizing:border-box;background:#0f1826;border:1px solid #1e2a3a;border-radius:8px;padding:8px 12px;font-size:12px;color:#64748b;outline:none;font-family:monospace"></div>
+              <button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;width:fit-content">Save changes</button>
+            </div>
+          </div>
+          <div id="stab-groups-s" style="display:none">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px">
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:18px">🏗️</span><div><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Construcción Coral</p><p style="font-size:11px;color:#64748b;margin:0">15 members · Active since Mar 1</p></div></div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <button style="position:relative;width:38px;height:20px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button>
+                  <button style="font-size:11px;color:#ef4444;background:none;border:1px solid rgba(239,68,68,.2);padding:4px 8px;border-radius:6px;cursor:pointer">Disconnect</button>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px">
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:18px">📋</span><div><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Management</p><p style="font-size:11px;color:#64748b;margin:0">8 members · Active since Mar 3</p></div></div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <button style="position:relative;width:38px;height:20px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button>
+                  <button style="font-size:11px;color:#ef4444;background:none;border:1px solid rgba(239,68,68,.2);padding:4px 8px;border-radius:6px;cursor:pointer">Disconnect</button>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px">
+                <div style="display:flex;align-items:center;gap:10px"><span style="font-size:18px">💼</span><div><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Cliente Rodriguez</p><p style="font-size:11px;color:#f59e0b;margin:0">Paused · 5 members</p></div></div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <button style="position:relative;width:38px;height:20px;border-radius:20px;background:#f59e0b;border:none;cursor:pointer"><span style="position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button>
+                  <button style="font-size:11px;color:#ef4444;background:none;border:1px solid rgba(239,68,68,.2);padding:4px 8px;border-radius:6px;cursor:pointer">Disconnect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="stab-team" style="display:none">
+            <div style="display:flex;justify-content:flex-end;margin-bottom:12px"><button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:7px 14px;border-radius:8px;cursor:pointer">+ Invite member</button></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px;padding:10px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600">JK</div><div style="flex:1"><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Jeff Kaan</p><p style="font-size:11px;color:#64748b;margin:0">djeyff06@gmail.com</p></div><span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(230,126,34,.1);color:#E67E22;border:1px solid rgba(230,126,34,.2)">Admin</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:10px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px"><div style="width:32px;height:32px;border-radius:50%;background:#1e3a5f;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600">ML</div><div style="flex:1"><p style="font-size:13px;font-weight:500;color:#fff;margin:0">María López</p><p style="font-size:11px;color:#64748b;margin:0">maria@constructora.com</p></div><span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(96,165,250,.1);color:#60a5fa;border:1px solid rgba(96,165,250,.2)">Member</span></div>
+            </div>
+          </div>
+          <div id="stab-billing" style="display:none"><div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:18px;margin-bottom:14px"><p style="font-size:13px;font-weight:600;color:#fff;margin:0 0 4px">Pro Plan — $79/mo</p><p style="font-size:12px;color:#64748b;margin:0 0 12px">Up to 20 groups · 3 dashboard users · 90-day history</p><button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:7px 14px;border-radius:8px;cursor:pointer">Manage subscription</button></div></div>
+          <div id="stab-notifications" style="display:none"><div style="display:flex;flex-direction:column;gap:12px"><div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px"><div><p style="font-size:13px;color:#fff;margin:0">Daily summaries</p><p style="font-size:11px;color:#64748b;margin:0">Receive daily AI summaries via WhatsApp</p></div><button style="position:relative;width:38px;height:20px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button></div><div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px"><div><p style="font-size:13px;color:#fff;margin:0">New group detected</p><p style="font-size:11px;color:#64748b;margin:0">Alert when Retena is added to a new group</p></div><button style="position:relative;width:38px;height:20px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;background:#fff;border-radius:50%"></span></button></div></div></div>
+          <div id="stab-integrations" style="display:none"><div style="display:flex;flex-direction:column;gap:10px"><div style="padding:14px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;display:flex;align-items:center;justify-content:space-between"><div><p style="font-size:13px;font-weight:500;color:#fff;margin:0">Webhook</p><p style="font-size:11px;color:#64748b;margin:0">Push transcriptions to your backend</p></div><button style="font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;color:#60a5fa;padding:6px 12px;border-radius:8px;cursor:pointer">Configure</button></div></div></div>
+          <div id="stab-security" style="display:none"><div style="display:flex;flex-direction:column;gap:14px"><div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">Current password</label><input type="password" placeholder="••••••••" style="width:100%;box-sizing:border-box;background:#1a2234;border:1px solid #2a3a54;border-radius:8px;padding:8px 12px;font-size:13px;color:#fff;outline:none"></div><div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">New password</label><input type="password" placeholder="••••••••" style="width:100%;box-sizing:border-box;background:#1a2234;border:1px solid #2a3a54;border-radius:8px;padding:8px 12px;font-size:13px;color:#fff;outline:none"></div><button style="font-size:12px;background:#2A5C8F;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;width:fit-content">Update password</button></div></div>
+          <div id="stab-api" style="display:none"><div><label style="font-size:12px;color:#64748b;display:block;margin-bottom:4px">API Key</label><div style="display:flex;gap:8px"><input type="text" value="rt_live_••••••••••••••••" readonly style="flex:1;background:#0f1826;border:1px solid #1e2a3a;border-radius:8px;padding:8px 12px;font-size:12px;color:#64748b;font-family:monospace;outline:none"><button style="font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;color:#60a5fa;padding:8px 12px;border-radius:8px;cursor:pointer">Reveal</button><button style="font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:8px 12px;border-radius:8px;cursor:pointer">Regenerate</button></div></div></div>
+          <div id="stab-danger" style="display:none"><div style="background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:18px"><p style="font-size:13px;font-weight:600;color:#ef4444;margin:0 0 6px">Delete workspace</p><p style="font-size:12px;color:#94a3b8;margin:0 0 12px">This permanently deletes all groups, transcripts, and summaries. Cannot be undone.</p><button style="font-size:12px;background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.3);padding:8px 16px;border-radius:8px;cursor:pointer">Delete workspace</button></div></div>
         </div>
       </div>
 
@@ -818,6 +1395,158 @@
   async function logout() {
     await fetch('/api/auth/logout', { method: 'POST' });
     window.location.replace('/dashboard/login');
+  }
+
+  // ── Mock data ──
+  const mockGroups = [
+    { id:"g1", name:"🏗️ Construcción Coral", members:15, status:"active", emoji:"🏗️", shortName:"Coral" },
+    { id:"g2", name:"📋 Management", members:8, status:"active", emoji:"📋", shortName:"Mgmt" },
+    { id:"g3", name:"💼 Cliente Rodriguez", members:5, status:"paused", emoji:"💼", shortName:"Rodriguez" },
+  ];
+  const mockMessages = [
+    { id:"msg1", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:47", text:"Hay que revisar los precios antes del lunes. El cemento subió 15 por ciento.", date:"Mar 14, 10:23", keyPoints:["Cement up 15%","Review before Monday"] },
+    { id:"msg3", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:12", text:"El cliente confirmó la reunión para el viernes a las 3. Necesitamos tener los planos listos.", date:"Mar 14, 09:15", keyPoints:["Client meeting Friday 3pm","Plans must be ready"] },
+    { id:"msg5", groupId:"g1", sender:"Carlos Méndez", initials:"CM", type:"voice", duration:"0:35", text:"Necesitamos revisar también el presupuesto del baño principal antes de cerrar.", date:"Mar 14, 10:45", keyPoints:["Bathroom budget needs review","Before closing"] },
+    { id:"msg9", groupId:"g2", sender:"María López", initials:"ML", type:"voice", duration:"1:34", text:"Acabo de hablar con el banco. El financiamiento está aprobado pero necesitan dos documentos más.", date:"Mar 14, 09:45", keyPoints:["Bank financing approved","2 docs needed by March 20"] },
+    { id:"msg7", groupId:"g3", sender:"Roberto Santos", initials:"RS", type:"voice", duration:"0:28", text:"El señor Rodriguez quiere cambiar el diseño de la cocina. Dice que vio algo en Pinterest que le gustó más.", date:"Mar 13, 16:20", keyPoints:["Client wants kitchen redesign"] },
+  ];
+  const mockPersonalNotes = [
+    { id:"p1", date:"Mar 14, 08:30 AM", duration:"0:34", lang:"🇪🇸", starred:false, text:"Recuerda llamar al dentista mañana a las 9. Y comprar el regalo para el cumpleaños de Ana el sábado.", keyPoints:["Call dentist tomorrow 9am","Buy Ana\'s birthday gift for Saturday"] },
+    { id:"p2", date:"Mar 13, 06:45 PM", duration:"1:29", lang:"🇫🇷", starred:true, text:"Bonjour, je voulais te parler du dossier médical de maman. Le médecin a dit qu\'elle doit prendre deux médicaments différents et revenir le mois prochain pour un contrôle.", keyPoints:["Mom needs two different medications","Follow-up appointment next month"] },
+    { id:"p3", date:"Mar 12, 02:20 PM", duration:"0:45", lang:"🇬🇧", starred:false, text:"Quick reminder about the insurance renewal. Deadline is March 20th. Need to send the signed form to the broker before then.", keyPoints:["Insurance renewal deadline March 20","Send signed form to broker"] },
+    { id:"p4", date:"Mar 11, 09:00 AM", duration:"1:02", lang:"🇪🇸", starred:false, text:"La reunión con el abogado es el jueves a las 2. Llevar todos los documentos del condominio y la carta de Guerrin.", keyPoints:["Lawyer meeting Thursday 2pm","Bring condo documents"] },
+  ];
+
+  // ── Group detail ──
+  function showGroupDetail(gid) {
+    const g = mockGroups.find(x=>x.id===gid);
+    const msgs = mockMessages.filter(m=>m.groupId===gid);
+    const d = document.getElementById('group-detail');
+    d.innerHTML = `
+      <div style="width:100%;max-width:500px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)">
+          <div style="width:48px;height:48px;border-radius:12px;background:#1e2a3a;display:flex;align-items:center;justify-content:center;font-size:22px">${g.emoji}</div>
+          <div style="flex:1"><h3 style="font-size:15px;font-weight:600;color:#fff;margin:0 0 3px">${g.name}</h3><p style="font-size:12px;color:#64748b;margin:0">${g.members} members · Connected since Mar 1</p></div>
+          <span style="font-size:11px;padding:3px 8px;border-radius:20px;background:${g.status==='active'?'rgba(34,197,94,.1)':'rgba(245,158,11,.1)'};color:${g.status==='active'?'#4ade80':'#f59e0b'};border:1px solid ${g.status==='active'?'rgba(34,197,94,.2)':'rgba(245,158,11,.2)'}">${g.status==='active'?'Active':'Paused'}</span>
+        </div>
+        <div style="display:flex;gap:16px;margin-bottom:18px">
+          <div style="text-align:center"><p style="font-size:18px;font-weight:600;color:#fff;margin:0">${msgs.length}</p><p style="font-size:11px;color:#64748b;margin:0">Transcripts</p></div>
+          <div style="text-align:center"><p style="font-size:18px;font-weight:600;color:#fff;margin:0">47</p><p style="font-size:11px;color:#64748b;margin:0">Today msgs</p></div>
+        </div>
+        <div style="margin-bottom:16px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;padding:12px">
+          <p style="font-size:12px;font-weight:600;color:#94a3b8;margin:0 0 10px;text-transform:uppercase;letter-spacing:.5px">Recent voice notes</p>
+          ${msgs.map(m=>`<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);last-child:border:none"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="font-size:11px;color:#94a3b8">${m.sender}</span><span style="font-size:11px;background:#1e2a3a;color:#64748b;padding:1px 5px;border-radius:4px">${m.duration}</span><span style="font-size:11px;color:#64748b;margin-left:auto">${m.date}</span></div><p style="font-size:12px;color:#cbd5e1;margin:0">${m.text}</p></div>`).join('')}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:10px">
+          <span style="font-size:12px;color:#64748b">Capture:</span>
+          <button onclick="this.style.background=this.style.background==='rgb(34,197,94)'?'#f59e0b':'#22c55e'" style="position:relative;width:36px;height:18px;border-radius:20px;background:#22c55e;border:none;cursor:pointer"><span style="position:absolute;top:2px;right:2px;width:14px;height:14px;background:#fff;border-radius:50%"></span></button>
+          <span style="font-size:12px;color:#4ade80">Active</span>
+        </div>
+        <button style="font-size:12px;color:#ef4444;background:none;border:none;cursor:pointer;padding:0">Disconnect group</button>
+      </div>`;
+  }
+
+  // ── Personal inbox note detail ──
+  function showPersonalNote(idx) {
+    const n = mockPersonalNotes[idx];
+    const d = document.getElementById('personal-detail');
+    d.style.display = 'block';
+    d.style.alignItems = 'flex-start';
+    d.style.justifyContent = 'flex-start';
+    d.innerHTML = `
+      <div style="width:100%;max-width:560px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <span style="font-size:12px;color:#64748b">${n.date}</span>
+          <span style="font-size:11px;background:#1a2234;color:#64748b;padding:2px 6px;border-radius:4px">${n.duration}</span>
+          <span style="font-size:14px">${n.lang}</span>
+          <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+          <span style="color:${n.starred?'#E67E22':'#64748b'};font-size:18px;margin-left:auto;cursor:pointer" onclick="this.style.color=this.style.color==='rgb(230,126,34)'?'#64748b':'#E67E22'">${n.starred?'★':'☆'}</span>
+        </div>
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:16px;margin-bottom:14px">
+          <p style="font-size:14px;color:#e2e8f0;line-height:1.6;margin:0">${n.text}</p>
+        </div>
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-radius:12px;padding:14px;margin-bottom:14px">
+          <p style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">AI Summary</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px">
+            ${n.keyPoints.map(k=>`<li style="font-size:13px;color:#cbd5e1;display:flex;gap:8px"><span style="color:#2A5C8F">•</span>${k}</li>`).join('')}
+          </ul>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button onclick="navigator.clipboard.writeText('${n.text.replace(/'/g,"\'")}')" style="font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:7px 14px;border-radius:8px;cursor:pointer">Copy</button>
+          <button style="font-size:12px;background:#1e2a3a;border:1px solid #2a3a54;color:#94a3b8;padding:7px 14px;border-radius:8px;cursor:pointer">Download</button>
+          <button style="font-size:12px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:7px 14px;border-radius:8px;cursor:pointer">Delete</button>
+        </div>
+      </div>`;
+  }
+
+  // ── AI Search ──
+  function handleAISearch(e) { if(e.key==='Enter') triggerAISearch(); }
+  function triggerAISearch() {
+    const q = document.getElementById('ai-search-input').value.toLowerCase();
+    const results = document.getElementById('search-results');
+    const suggestions = document.getElementById('search-suggestions');
+    if(!q.trim()) return;
+    suggestions.style.display = 'none';
+    
+    if(q.match(/bathroom|tiles|azulejos|presupuesto|baño/)) {
+      results.innerHTML = `
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-left:3px solid #2A5C8F;border-radius:12px;padding:18px;margin-bottom:16px">
+          <p style="font-size:11px;color:#2A5C8F;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">AI Answer</p>
+          <p style="font-size:13px;color:#e2e8f0;line-height:1.6;margin:0 0 12px">Based on voice notes from Carlos in Construcción Coral (Mar 14), the bathroom budget needs review before closing. Roberto confirmed tile delivery for Thursday. Jean is updating the full quote by Friday.</p>
+          <p style="font-size:11px;color:#64748b;margin:0 0 8px">Based on:</p>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <button style="text-align:left;padding:8px;background:none;border:none;cursor:pointer;border-radius:8px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='none'">
+              <div style="display:flex;align-items:center;gap:6px">
+                <span style="font-size:12px">📎</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:4px;background:#1e2a3a;color:#94a3b8">🏗️ Coral</span>
+                <span style="font-size:12px;color:#94a3b8">Carlos Méndez · Mar 14 · "Necesitamos revisar el presupuesto del baño..."</span>
+              </div>
+            </button>
+            <button style="text-align:left;padding:8px;background:none;border:none;cursor:pointer;border-radius:8px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='none'">
+              <div style="display:flex;align-items:center;gap:6px">
+                <span style="font-size:12px">📎</span>
+                <span style="font-size:11px;padding:2px 6px;border-radius:4px;background:#1e2a3a;color:#94a3b8">🏗️ Coral</span>
+                <span style="font-size:12px;color:#94a3b8">Roberto Santos · Mar 14 · "Ya confirmé con el proveedor de azulejos..."</span>
+              </div>
+            </button>
+          </div>
+        </div>`;
+    } else if(q.match(/mom|medical|médical|maman/)) {
+      results.innerHTML = `
+        <div style="background:#1a2234;border:1px solid #2a3a54;border-left:3px solid #2A5C8F;border-radius:12px;padding:18px;margin-bottom:16px">
+          <p style="font-size:11px;color:#2A5C8F;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px">AI Answer</p>
+          <p style="font-size:13px;color:#e2e8f0;line-height:1.6;margin:0 0 12px">Based on a voice note from Mar 13, you discussed your mom's medical file. The doctor recommended she take two different medications and schedule a follow-up appointment next month.</p>
+          <p style="font-size:11px;color:#64748b;margin:0 0 8px">Based on:</p>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <button onclick="navigate('personal', document.querySelector('[data-section=personal]'));setTimeout(()=>showPersonalNote(1),200)" style="text-align:left;padding:8px;background:none;border:none;cursor:pointer;border-radius:8px" onmouseover="this.style.background='rgba(255,255,255,.04)'" onmouseout="this.style.background='none'">
+              <div style="display:flex;align-items:center;gap:6px">
+                <span style="font-size:12px">📎</span>
+                <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+                <span style="font-size:12px;color:#94a3b8">Mar 13, 06:45 PM · 🇫🇷 · "Bonjour, je voulais te parler du dossier médical de maman..."</span>
+              </div>
+            </button>
+          </div>
+        </div>
+        <button onclick="navigate('personal', document.querySelector('[data-section=personal]'));setTimeout(()=>showPersonalNote(1),200)" style="width:100%;text-align:left;padding:12px;background:#1a2234;border:1px solid #2a3a54;border-radius:10px;cursor:pointer;margin-bottom:8px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+            <span style="font-size:11px;color:#64748b">Mar 13, 06:45 PM</span>
+            <span style="font-size:11px;background:#1e2a3a;color:#64748b;padding:2px 6px;border-radius:4px">1:29</span>
+            <span>🇫🇷</span>
+            <span style="font-size:10px;padding:2px 6px;border-radius:20px;background:rgba(147,51,234,.15);color:#c084fc;border:1px solid rgba(147,51,234,.2)">Personal</span>
+          </div>
+          <p style="font-size:13px;color:#e2e8f0;margin:0">Bonjour, je voulais te parler du dossier médical de maman. Le médecin a dit qu'elle doit prendre deux médicaments différents et revenir le mois prochain pour un contrôle.</p>
+        </button>`;
+    } else {
+      results.innerHTML = `<div style="text-align:center;padding:40px 0;color:#64748b"><div style="font-size:32px;margin-bottom:12px">🔍</div><p style="font-size:14px;margin:0 0 4px">No results found</p><p style="font-size:12px;margin:0">Try a different query or check your filters.</p></div>`;
+    }
+  }
+
+  // ── Settings tabs ──
+  function showSettingsTab(tab, btn) {
+    document.querySelectorAll('[id^=stab-]').forEach(t=>t.style.display='none');
+    document.querySelectorAll('.stab').forEach(b=>{b.style.color='#64748b';b.style.borderBottom='2px solid transparent';});
+    document.getElementById('stab-'+tab).style.display='block';
+    btn.style.color='#60a5fa';btn.style.borderBottom='2px solid #2A5C8F';
   }
 </script>
 </body>
