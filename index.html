@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
   <link rel="icon-old" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231E3A5F'/><text y='.9em' font-size='65' x='17'>🧠</text></svg>">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Retena","description":"AI memory for your WhatsApp business groups. Your team never forgets.","url":"https://retena.app","applicationCategory":"BusinessApplication","offers":[{"@type":"Offer","price":"39","priceCurrency":"USD","name":"Starter"},{"@type":"Offer","price":"79","priceCurrency":"USD","name":"Pro"},{"@type":"Offer","price":"199","priceCurrency":"USD","name":"Business"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does Retena connect to WhatsApp groups?","acceptedAnswer":{"@type":"Answer","text":"Add Retena's number to any group. It transcribes all voice notes automatically. No setup, no config."}},{"@type":"Question","name":"Is Retena cheaper than Fireflies or Notion AI?","acceptedAnswer":{"@type":"Answer","text":"Retena Starter is $39/team vs $19/seat for Fireflies. For 5 people that's $39 vs $95. Plus Retena works in WhatsApp — Fireflies doesn't."}},{"@type":"Question","name":"Does my team need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. Your team keeps using WhatsApp exactly as they always have."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does Retena connect to WhatsApp groups?","acceptedAnswer":{"@type":"Answer","text":"Add Retena's number to any group. It transcribes all voice notes automatically. No setup, no config."}},{"@type":"Question","name":"How is Retena different from Fireflies or Otter?","acceptedAnswer":{"@type":"Answer","text":"Fireflies and Otter transcribe Zoom and Teams calls. Retena captures WhatsApp groups — the voice notes, decisions, and agreements your team sends every day. No app install, no workflow change, 99 languages."}},{"@type":"Question","name":"Does my team need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. Your team keeps using WhatsApp exactly as they always have."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -211,7 +211,7 @@
       <li><a href="#how" data-i18n="navHow">How it works</a></li>
       <li><a href="#features" data-i18n="navFeatures">Features</a></li>
       <li><a href="#pricing" data-i18n="navPricing">Pricing</a></li>
-      <li><a href="#compare" data-i18n="navCompare">Compare</a></li>
+      <li><a href="#compare" data-i18n="navCompare">vs Others</a></li>
       <li><a href="#faq" data-i18n="navFAQ">FAQ</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px">
@@ -235,7 +235,7 @@
   <a href="#how" onclick="closeMob()" data-i18n="navHow">How it works</a>
   <a href="#features" onclick="closeMob()" data-i18n="navFeatures">Features</a>
   <a href="#pricing" onclick="closeMob()" data-i18n="navPricing">Pricing</a>
-  <a href="#compare" onclick="closeMob()" data-i18n="navCompare">Compare</a>
+  <a href="#compare" onclick="closeMob()" data-i18n="navCompare">vs Others</a>
   <a href="#waitlist" onclick="closeMob()" data-i18n="navCTA">Get early access</a>
 </div>
 
@@ -469,50 +469,69 @@
 
 <!-- Compare -->
 <section id="compare" class="bg2-sec" style="padding:5rem 1.5rem">
-  <div style="max-width:1140px;margin:0 auto">
-    <div class="lbl" data-i18n="lblCompare">COMPARE</div>
-    <h2 data-i18n="cmpTitle">The only tool that works where your team already is</h2>
-    <p class="sub" data-i18n="cmpSub">Every other tool requires your team to change workflows. Retena doesn't. It works in the WhatsApp groups they already use — invisibly.</p>
-    <div class="tbl-wrap">
-      <table class="ctbl">
-        <thead><tr>
-          <th data-i18n="cmpTool">Tool</th>
-          <th data-i18n="cmpWA">WhatsApp groups</th>
-          <th data-i18n="cmpNoApp">No new app</th>
-          <th data-i18n="cmpSearch">AI search</th>
-          <th data-i18n="cmpSummary">Daily summaries</th>
-          <th data-i18n="cmpPerTeam">Per-team pricing</th>
-          <th data-i18n="cmpPrice">Price</th>
-        </tr></thead>
+  <div style="max-width:56rem;margin:0 auto">
+    <h2 style="font-size:1.5rem;font-weight:700;color:#fff;text-align:center;margin-bottom:.75rem">Built for WhatsApp teams, not Zoom meetings</h2>
+    <p style="color:#9ca3af;text-align:center;margin-bottom:2.5rem;max-width:42rem;margin-left:auto;margin-right:auto">
+      Tools like Otter and Fireflies transcribe video calls.
+      Retena captures what actually happens in your WhatsApp groups —
+      the voice notes, the decisions, the agreements nobody can find later.
+    </p>
+    <div style="background:#1f2937;border-radius:.75rem;border:1px solid #374151;overflow:hidden">
+      <table style="width:100%;font-size:.875rem;border-collapse:collapse">
+        <thead>
+          <tr style="border-bottom:1px solid #374151">
+            <th style="text-align:left;padding:1rem;color:#9ca3af;font-weight:500">Feature</th>
+            <th style="padding:1rem;color:#9ca3af;font-weight:500;text-align:center">Otter / Fireflies</th>
+            <th style="padding:1rem;color:#E67E22;font-weight:500;text-align:center">Retena</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr class="retena-r"><td>🧠 <strong>Retena</strong></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td style="color:var(--a2);font-weight:700">$39/team</td></tr>
-          <tr><td>🔥 Fireflies.ai</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td style="color:var(--t3)">$19/seat/mo</td></tr>
-          <tr><td>🦦 Otter.ai</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td style="color:var(--t3)">$20/seat/mo</td></tr>
-          <tr><td>🎯 Laxis</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td style="color:var(--t3)">$15.99/seat/mo</td></tr>
-          <tr><td>🎙️ Rev.ai</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td style="color:var(--t3)">$0.02/min</td></tr>
-          <tr><td>📝 Notion AI</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck">✓</span></td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td style="color:var(--t3)">$16/seat/mo</td></tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">WhatsApp group capture</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">Voice note transcription</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">Silent — no bot replies in chat</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">N/A</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">Cross-language AI search</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">Personal voice note inbox</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">Zoom / Teams meetings</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(55,65,81,.5)">
+            <td style="padding:1rem;color:#d1d5db">No app install needed</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">✗ (requires app)</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓ (just add a number)</td>
+          </tr>
+          <tr>
+            <td style="padding:1rem;color:#d1d5db">99 languages</td>
+            <td style="padding:1rem;text-align:center;color:#6b7280">Limited</td>
+            <td style="padding:1rem;text-align:center;color:#4ade80">✓</td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.9rem;margin-top:1.5rem">
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.2rem;font-weight:800;color:#ef4444;text-decoration:line-through;opacity:.6">$95/mo</div>
-        <div style="font-size:.8rem;color:var(--t3);margin:3px 0 9px" data-i18n="cmpC1l">Fireflies for 5-person team</div>
-        <div style="font-size:2rem;font-weight:800;color:var(--a2)">$39/mo</div>
-        <div style="font-size:.8rem;color:var(--a);font-weight:600" data-i18n="cmpC1s">Retena for whole team — Save 59%</div>
-      </div>
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.2rem;font-weight:800;color:#ef4444;text-decoration:line-through;opacity:.6">$100/mo</div>
-        <div style="font-size:.8rem;color:var(--t3);margin:3px 0 9px" data-i18n="cmpC2l">Otter.ai for 5-person team</div>
-        <div style="font-size:2rem;font-weight:800;color:var(--a2)">$39/mo</div>
-        <div style="font-size:.8rem;color:var(--a);font-weight:600" data-i18n="cmpC2s">Retena for whole team — Save 61%</div>
-      </div>
-      <div class="card" style="text-align:center;border-color:var(--bd2);background:var(--c2)">
-        <div style="font-size:1.8rem;margin-bottom:7px">🧠</div>
-        <div style="font-size:.92rem;font-weight:700;margin-bottom:7px" data-i18n="cmpUniqT">And nobody else does WhatsApp</div>
-        <div style="font-size:.82rem;color:var(--t2)" data-i18n="cmpUniqB">Fireflies, Otter, Laxis — zero WhatsApp support. Retena is the only tool built for how field teams actually communicate.</div>
-      </div>
-    </div>
+    <p style="text-align:center;font-size:.875rem;color:#6b7280;margin-top:1.5rem">
+      Retena isn't a meeting tool. It's your team's WhatsApp memory.
+    </p>
   </div>
 </section>
 
