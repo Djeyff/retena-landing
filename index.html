@@ -805,7 +805,7 @@ function applyLang(code){
   // Update text nodes
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var key=el.getAttribute('data-i18n');
-    if(t[key]!==undefined) el.innerHTML=t[key];
+    if(t[key]!==undefined) el.textContent=t[key];
   });
   // Update placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
