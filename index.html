@@ -796,13 +796,7 @@ yo:{navHow:'Báwo ni ó ṣe ń ṣiṣẹ́',navFeatures:'Àwọn ànfààní',
 };
 // ── Language engine (missing functions) ──────────────────────────────────────
 var currentLang = 'en';
-
-// Curated dropdown languages (shown in picker)
-var LOCS = {};
-['en','es','fr','pt','de','ar','zh','ja','it','nl','ko','ru','tr','hi','pl','id','vi','th','da','sv','fi','nb','ro','uk','cs','sk','hr','bg','ms','he'].forEach(function(c){ if(T[c]) LOCS[c]=T[c]; });
-
-// Safe languages for browser auto-detect (prevents obscure locales like af, dv, fo from triggering)
-var DETECT_LANGS = Object.keys(LOCS);
+var LOCS = T; // all 94 languages in selector
 
 function applyLang(code){
   var t=T[code]||T.en;
@@ -889,9 +883,12 @@ async function joinWL(){
 // Init
 (function(){
   var saved=localStorage.getItem('retena-lang');
-  var browserLang=(navigator.language||'en').split('-')[0].toLowerCase();
-  // Only auto-detect to curated safe languages — never obscure locales like af, dv, fo
-  var best=saved||(DETECT_LANGS.indexOf(browserLang)!==-1?browserLang:'en');
+  // Default: English always — only respect saved pref if user explicitly chose it
+  var best=(saved && T[saved]) ? saved : 'en';
+  // Clear any bad auto-detected value (af, dv, fo, etc.) — reset to en
+  if(saved && !['en','es','fr','pt','de','ar','zh','ja','it','nl','ko','ru','tr','hi','pl','id','vi','th','da','sv','fi','nb','ro','uk','cs','sk','hr','bg','ms','he','it','zh','ja','ko'].includes(saved)) {
+    localStorage.removeItem('retena-lang'); best='en';
+  }
   buildLangOpts();
   applyLang(best);
 })();
