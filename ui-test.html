@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retena — UI Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --card: #131929;
+      --card2: #1a2234;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(230,126,34,0.25);
+      --orange: #E67E22;
+      --orange2: #f39c3a;
+      --text: #f1f5f9;
+      --text2: #94a3b8;
+      --text3: #4b5563;
+      --green: #22c55e;
+      --green2: rgba(34,197,94,0.15);
+      --blue: #3b82f6;
+      --summary-bg: rgba(230,126,34,0.08);
+      --summary-border: rgba(230,126,34,0.18);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Page label ── */
+    .page-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--orange2);
+      background: rgba(230,126,34,0.1);
+      border: 1px solid var(--border2);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Main card (macOS window) ── */
+    .window {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 40px 80px rgba(0,0,0,0.6),
+        0 0 80px rgba(230,126,34,0.05);
+    }
+
+    /* ── Window title bar ── */
+    .win-bar {
+      display: flex;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    .traffic {
+      display: flex;
+      gap: 7px;
+      margin-right: 12px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .win-title {
+      flex: 1;
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--text2);
+    }
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.75); }
+    }
+
+    /* ── Content area ── */
+    .win-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* ── Search bar ── */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      padding: 10px 14px;
+      transition: border-color .2s;
+    }
+    .search-bar:hover { border-color: var(--border2); }
+    .search-icon { font-size: 1rem; opacity: .6; }
+    .search-text {
+      font-size: .83rem;
+      color: var(--text3);
+      font-style: italic;
+      line-height: 1;
+    }
+
+    /* ── Message ── */
+    .message {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 4px 0;
+    }
+
+    /* ── Avatar ── */
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+    .av-orange { background: linear-gradient(135deg, #E67E22, #f5a833); }
+    .av-blue   { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+    .av-purple { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+
+    /* ── Message content ── */
+    .msg-content { flex: 1; min-width: 0; }
+
+    .msg-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin-bottom: 6px;
+    }
+    .msg-name {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--orange2);
+    }
+    .msg-name.blue { color: #60a5fa; }
+    .msg-time {
+      font-size: .72rem;
+      color: var(--text3);
+      font-weight: 400;
+    }
+
+    /* ── Waveform ── */
+    .waveform {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      height: 18px;
+      margin-bottom: 7px;
+    }
+    .wbar {
+      width: 3px;
+      background: var(--orange);
+      border-radius: 2px;
+      animation: wave 1.6s ease-in-out infinite;
+      opacity: .7;
+    }
+    .wbar:nth-child(1)  { height: 4px;  animation-delay: 0s; }
+    .wbar:nth-child(2)  { height: 10px; animation-delay: .1s; }
+    .wbar:nth-child(3)  { height: 7px;  animation-delay: .2s; }
+    .wbar:nth-child(4)  { height: 15px; animation-delay: .3s; opacity: 1; }
+    .wbar:nth-child(5)  { height: 9px;  animation-delay: .4s; }
+    .wbar:nth-child(6)  { height: 13px; animation-delay: .3s; }
+    .wbar:nth-child(7)  { height: 6px;  animation-delay: .2s; }
+    .wbar:nth-child(8)  { height: 11px; animation-delay: .1s; }
+    .wbar:nth-child(9)  { height: 5px;  animation-delay: 0s; }
+    .wbar:nth-child(10) { height: 8px;  animation-delay: .15s; }
+    .wbar:nth-child(11) { height: 14px; animation-delay: .25s; opacity: 1; }
+    .wbar:nth-child(12) { height: 6px;  animation-delay: .35s; }
+    @keyframes wave {
+      0%, 100% { transform: scaleY(.5); opacity: .5; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    /* ── Transcription pill ── */
+    .trans-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green2);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .trans-pill .mic { font-size: .8rem; }
+    .trans-pill .check { opacity: .8; }
+
+    /* ── Transcription text ── */
+    .trans-text {
+      font-size: .85rem;
+      color: var(--text2);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2px 0;
+    }
+
+    /* ── AI Summary card ── */
+    .summary-card {
+      background: var(--summary-bg);
+      border: 1px solid var(--summary-border);
+      border-radius: 14px;
+      padding: 13px 14px;
+    }
+    .summary-title {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--orange2);
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .summary-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .summary-items li {
+      font-size: .8rem;
+      color: var(--text2);
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.5;
+    }
+    .summary-items li::before {
+      content: '•';
+      color: var(--orange);
+      font-weight: 700;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ── Below window: label ── */
+    .caption {
+      font-size: .72rem;
+      color: var(--text3);
+      text-align: center;
+      margin-top: 1.2rem;
+    }
+
+    /* ── Side-by-side comparison ── */
+    .compare-wrap {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 980px;
+      width: 100%;
+    }
+    .compare-col {
+      flex: 1;
+      min-width: 280px;
+      max-width: 460px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .compare-label {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: .9rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+    .label-old {
+      color: var(--text3);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+    .label-new {
+      color: var(--orange2);
+      background: rgba(230,126,34,0.1);
+      border: 1px solid var(--border2);
+    }
+
+    /* ── OLD mock (current style) ── */
+    .mock-old {
+      width: 100%;
+      background: #1A2332;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 1.2rem;
+      box-shadow: 0 40px 80px rgba(0,0,0,.5);
+    }
+    .mock-old .hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .9rem;
+      padding-bottom: .7rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .dots-old { display: flex; gap: 5px; }
+    .dot-old { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-old .title { font-size: .68rem; color: #4b5563; flex: 1; text-align: center; font-weight: 500; }
+    .mock-old .m-search { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.04); border: 1px solid rgba(230,126,34,0.2); border-radius: 8px; padding: 6px 10px; }
+    .mock-old .m-search span { font-size: .68rem; color: #4b5563; }
+    .mock-old .msg { display: flex; gap: 8px; align-items: flex-start; padding: 7px; border-radius: 9px; margin-top: 8px; }
+    .mock-old .av { width: 27px; height: 27px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; color: #fff; }
+    .mock-old .mn { font-size: .66rem; font-weight: 600; margin-bottom: 2px; }
+    .mock-old .mt { font-size: .7rem; color: #94a3b8; line-height: 1.5; }
+    .mock-old .wf { display: flex; align-items: center; gap: 1.5px; height: 14px; margin: 3px 0; }
+    .mock-old .wb { width: 2px; background: #E67E22; border-radius: 1px; animation: wv 1.5s ease-in-out infinite; }
+    .mock-old .wb:nth-child(1){height:4px} .mock-old .wb:nth-child(2){height:9px;animation-delay:.1s} .mock-old .wb:nth-child(3){height:6px;animation-delay:.2s} .mock-old .wb:nth-child(4){height:12px;animation-delay:.3s} .mock-old .wb:nth-child(5){height:7px;animation-delay:.4s} .mock-old .wb:nth-child(6){height:10px;animation-delay:.3s} .mock-old .wb:nth-child(7){height:5px;animation-delay:.2s}
+    @keyframes wv { 0%,100%{transform:scaleY(.5);opacity:.6} 50%{transform:scaleY(1);opacity:1} }
+    .mock-old .bp { display: inline-flex; align-items: center; gap: 3px; font-size: .6rem; font-weight: 600; padding: 2px 6px; border-radius: 9px; margin-top: 3px; }
+    .mock-old .bv { background: rgba(16,185,129,.12); color: #f39c3a; }
+    .mock-old .bt { background: rgba(52,211,153,.1); color: #f5b86e; }
+    .mock-old .m-sum { background: rgba(230,126,34,.09); border: 1px solid rgba(16,185,129,.15); border-radius: 9px; padding: 7px 9px; margin-top: 7px; }
+    .mock-old .m-sum-t { font-size: .62rem; font-weight: 700; color: #f39c3a; margin-bottom: 3px; }
+    .mock-old .m-sum-b { font-size: .66rem; color: #94a3b8; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <div class="page-label">UI Style Test — Retena Hero Mock</div>
+
+  <div class="compare-wrap">
+
+    <!-- OLD -->
+    <div class="compare-col">
+      <div class="compare-label label-old">Current style</div>
+      <div class="mock-old">
+        <div class="hdr">
+          <div class="dots-old">
+            <div class="dot-old" style="background:#ff5f56"></div>
+            <div class="dot-old" style="background:#ffbd2e"></div>
+            <div class="dot-old" style="background:#27c93f"></div>
+          </div>
+          <div class="title">Retena — Construction Team</div>
+          <div style="font-size:.6rem;color:#4ade80">● Live</div>
+        </div>
+        <div class="m-search"><span>🔍</span><span>what did Juan say about the concrete supplier?</span></div>
+        <div>
+          <div class="msg">
+            <div class="av" style="background:linear-gradient(135deg,#E67E22,#f39c3a)">JM</div>
+            <div style="flex:1">
+              <div class="mn" style="color:#E67E22">Juan M. <span style="color:#4b5563;font-weight:400;margin-left:3px">9:14</span></div>
+              <div class="wf"><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div></div>
+              <span class="bp bv">🎙️ 0:42</span> <span class="bp bt">✓ Transcribed</span>
+              <div class="mt" style="margin-top:4px">"Concrete from Cemex arrives Thursday 7am."</div>
+            </div>
+          </div>
+          <div class="msg">
+            <div class="av" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">CR</div>
+            <div style="flex:1">
+              <div class="mn" style="color:#3b82f6">Carlos R. <span style="color:#4b5563;font-weight:400;margin-left:3px">11:30</span></div>
+              <div class="wf"><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div><div class="wb"></div></div>
+              <span class="bp bv">🎙️ 1:15</span> <span class="bp bt">✓ Transcribed</span>
+              <div class="mt" style="margin-top:4px">"Plumbing passed inspection."</div>
+            </div>
+          </div>
+          <div class="m-sum">
+            <div class="m-sum-t">📋 AI Daily Summary</div>
+            <div class="m-sum-b">• Cemex delivery Thu 7am — crew needed early<br>• Plumbing ✅ — walls start Monday</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW -->
+    <div class="compare-col">
+      <div class="compare-label label-new">New style ✦</div>
+      <div class="window">
+
+        <!-- Title bar -->
+        <div class="win-bar">
+          <div class="traffic">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <div class="win-title">Retena — Construction Team</div>
+          <div class="live-badge">
+            <div class="live-dot"></div>
+            Live
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="win-body">
+
+          <!-- Search -->
+          <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <span class="search-text">what did Juan say about the concrete supplier?</span>
+          </div>
+
+          <!-- Message 1 -->
+          <div class="message">
+            <div class="avatar av-orange">JM</div>
+            <div class="msg-content">
+              <div class="msg-meta">
+                <span class="msg-name">Juan M.</span>
+                <span class="msg-time">9:14</span>
+              </div>
+              <div class="waveform">
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+              </div>
+              <div class="trans-pill">
+                <span class="mic">🎤</span>
+                <span>0:42</span>
+                <span class="check">✓ Transcribed</span>
+              </div>
+              <div class="trans-text">"Concrete from Cemex arrives Thursday 7am. Tell the crew to be there early — they only give us 2h window."</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Message 2 -->
+          <div class="message">
+            <div class="avatar av-blue">CR</div>
+            <div class="msg-content">
+              <div class="msg-meta">
+                <span class="msg-name blue">Carlos R.</span>
+                <span class="msg-time">11:30</span>
+              </div>
+              <div class="waveform">
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+                <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+              </div>
+              <div class="trans-pill">
+                <span class="mic">🎤</span>
+                <span>1:15</span>
+                <span class="check">✓ Transcribed</span>
+              </div>
+              <div class="trans-text">"Plumbing passed inspection. Walls go up Monday. Need 15 cement bags + rebar confirmed before Friday."</div>
+            </div>
+          </div>
+
+          <!-- AI Summary -->
+          <div class="summary-card">
+            <div class="summary-title">
+              <span>📋</span>
+              <span>AI Daily Summary</span>
+            </div>
+            <ul class="summary-items">
+              <li>Cemex delivery Thu 7am — crew needed early</li>
+              <li>Plumbing ✅ — walls start Monday</li>
+              <li>Order: 15 bags + rebar before Fri</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="caption">retena.app · UI concept test · March 2026</div>
+
+</body>
+</html>
