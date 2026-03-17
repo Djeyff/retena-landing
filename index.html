@@ -812,6 +812,11 @@ function applyLang(code){
     var key=el.getAttribute('data-i18n-placeholder');
     if(t[key]!==undefined) el.placeholder=t[key];
   });
+  // Update flag + code in selector button
+  var flagEl=document.getElementById('langFlag');
+  var codeEl=document.getElementById('langCode');
+  if(flagEl) flagEl.textContent=t.flag||'🌐';
+  if(codeEl) codeEl.textContent=t.code||code.toUpperCase();
   // RTL support
   document.documentElement.dir=(code==='ar'||code==='he'||code==='ur'||code==='fa')?'rtl':'ltr';
 }
