@@ -670,7 +670,7 @@
     <h2 data-i18n="ctaTitle">Stop losing your team's decisions to WhatsApp</h2>
     <p data-i18n="ctaSub">Join the waitlist. Early access members lock their rate forever. Setup in 2 minutes.</p>
     <div class="ctas" style="justify-content:center;margin-bottom:1.5rem">
-      <a href="#waitlist" class="btn btn-p" data-i18n="ctaWA">💬 Connect on WhatsApp</a>
+      <a href="https://wa.me/message/RETENA_WA_PLACEHOLDER" id="wa-cta-btn" class="btn btn-p" data-i18n="ctaWA">💬 Connect on WhatsApp</a>
       <a href="https://t.me/RetenaApp" class="btn btn-s" data-i18n="ctaTG">✈️ Message on Telegram</a>
     </div>
     <div class="wf-form">
@@ -847,7 +847,7 @@ async function joinWL(){
   const btn=document.querySelector('button[onclick="joinWL()"]');
   btn.disabled=true; btn.textContent='...';
   try {
-    const r=await fetch('https://bot.voz-clara.com/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,product:'retena',lang:currentLang})});
+    const r=await fetch('https://dashboard-api.voz-clara.com/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,product:'retena',lang:currentLang})});
     if(r.ok){ msg.style.color='#4ade80'; msg.textContent="✓ You're on the list! We'll notify you when Retena launches."; document.getElementById('wlEmail').value=''; }
     else { msg.style.color='#f87171'; msg.textContent='Something went wrong. Email hello@retena.app instead.'; }
   } catch(e){ msg.style.color='#f87171'; msg.textContent='Offline? Email hello@retena.app to join.'; }
