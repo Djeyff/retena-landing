@@ -670,7 +670,7 @@
     <h2 data-i18n="ctaTitle">Stop losing your team's decisions to WhatsApp</h2>
     <p data-i18n="ctaSub">Join the waitlist. Early access members lock their rate forever. Setup in 2 minutes.</p>
     <div class="ctas" style="justify-content:center;margin-bottom:1.5rem">
-      <a href="https://wa.me/message/RETENA_WA_PLACEHOLDER" id="wa-cta-btn" class="btn btn-p" data-i18n="ctaWA">💬 Connect on WhatsApp</a>
+      <button onclick="openChatwoot()" class="btn btn-p" data-i18n="ctaWA">💬 Connect on WhatsApp</button>
       <a href="https://t.me/RetenaApp" class="btn btn-s" data-i18n="ctaTG">✈️ Message on Telegram</a>
     </div>
     <div class="wf-form">
@@ -862,6 +862,32 @@ async function joinWL(){
   buildLangOpts();
   applyLang(best);
 })();
+</script>
+<!-- Chatwoot Live Chat Widget -->
+<script>
+(function(d,t) {
+  var BASE_URL="https://chat.voz-clara.com";
+  var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=BASE_URL+"/packs/js/sdk.js";
+  g.defer=true;
+  g.async=true;
+  s.parentNode.insertBefore(g,s);
+  g.onload=function(){
+    window.chatwootSDK.run({
+      websiteToken: 'ojEMcpVmFWLdaN8JBi85gLVM',
+      baseUrl: BASE_URL
+    });
+  };
+})(document,"script");
+
+function openChatwoot() {
+  if (window.$chatwoot) {
+    window.$chatwoot.toggle('open');
+  } else {
+    // Fallback: scroll to email form
+    document.getElementById('wlEmail').focus();
+  }
+}
 </script>
 </body>
 </html>
