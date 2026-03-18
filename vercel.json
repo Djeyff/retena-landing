@@ -11,6 +11,7 @@
     { "src": "/og.svg",              "dest": "/og.svg" },
     { "src": "/privacy-policy.html", "dest": "/privacy-policy.html" },
     { "src": "/terms-of-service.html", "dest": "/terms-of-service.html" },
+    { "src": "/security.html",       "dest": "/security.html" },
     { "src": "/(.*)",                "dest": "/index.html" }
   ]
 }
