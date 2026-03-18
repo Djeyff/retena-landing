@@ -1,125 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retena — Security</title>
+<title>Retena — Seguridad</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#050c18;--bg2:#0d1a2e;--accent:#f5b86e;--accent2:#6ee7b7;--text:#e2e8f0;--text2:#94a3b8;--border:#1e293b;}
+  :root{--bg:#0d1926;--bg2:#1a2332;--accent:#E67E22;--accent2:#6ee7b7;--text:#e2e8f0;--text2:#94a3b8;--border:#1e293b;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
-  .container{max-width:800px;margin:0 auto;padding:4rem 2rem;}
-  h1{font-size:2.5rem;font-weight:700;margin-bottom:.5rem;background:linear-gradient(135deg,#fff,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .subtitle{color:var(--text2);margin-bottom:3rem;font-size:1rem;}
-  h2{font-size:1.4rem;font-weight:600;margin:2.5rem 0 1rem;color:var(--accent2);}
-  p,li{color:var(--text2);margin-bottom:1rem;}
-  ul{padding-left:1.5rem;}
-  li{margin-bottom:.5rem;}
-  a{color:var(--accent2);text-decoration:none;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;}
+  .container{max-width:800px;margin:0 auto;padding:2rem 1.5rem;}
+  h1{color:var(--accent);font-size:2.5rem;font-weight:700;margin-bottom:1.5rem;text-align:center;}
+  h2{color:var(--text);font-size:1.5rem;font-weight:600;margin:2rem 0 1rem 0;border-bottom:2px solid var(--border);padding-bottom:0.5rem;}
+  h3{color:var(--accent2);font-size:1.2rem;font-weight:500;margin:1.5rem 0 0.5rem 0;}
+  p{color:var(--text2);margin-bottom:1rem;}
+  ul{color:var(--text2);margin-left:1.5rem;margin-bottom:1rem;}
+  li{margin-bottom:0.5rem;}
+  .highlight{background:rgba(230,120,34,0.1);padding:0.8rem;border-radius:8px;border-left:4px solid var(--accent);margin:1rem 0;}
+  .date{color:var(--accent);font-weight:500;}
+  a{color:var(--accent);text-decoration:none;}
   a:hover{text-decoration:underline;}
-  .back{display:inline-block;margin-bottom:2rem;color:var(--accent);font-size:.9rem;}
-  strong{color:var(--text);}
-  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin:2rem 0;}
-  .pillar{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.15);border-radius:12px;padding:1.5rem;}
-  .pillar-icon{font-size:1.8rem;margin-bottom:.75rem;}
-  .pillar h3{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.5rem;}
-  .pillar p{font-size:.85rem;margin:0;}
-  .disclosure-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin:2rem 0;}
-  footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem;}
-  footer a{color:var(--text2);margin:0 1rem;font-size:.85rem;}
+  footer{text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);color:var(--text2);}
+  footer a{color:var(--accent);}
 </style>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Security — Retena">
-  <meta property="og:description" content="Retena security: AES-256 encryption, zero-knowledge architecture, GDPR.">
-  <meta property="og:image" content="https://retena.app/og.svg">
-  <meta property="og:url" content="https://retena.app/security">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Security — Retena">
-  <meta name="twitter:description" content="Retena security: AES-256 encryption, zero-knowledge architecture, GDPR.">
-  <meta name="twitter:image" content="https://retena.app/og.svg">
 </head>
 <body>
+
 <div class="container">
-  <a href="/" class="back">← Back to Retena</a>
-  <h1>Security</h1>
-  <p class="subtitle">How we protect your team's communication data.</p>
+<h1>Política de Seguridad</h1>
 
-  <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-icon">🔐</div>
-      <h3>Encrypted in Transit</h3>
-      <p>All data is transmitted over TLS 1.3. No plaintext communication, ever.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🗄️</div>
-      <h3>Encrypted at Rest</h3>
-      <p>Your stored transcriptions and messages are encrypted at rest using AES-256.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🏢</div>
-      <h3>Isolated Workspaces</h3>
-      <p>Each organization's data is logically isolated. No cross-tenant data access is possible.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🎙️</div>
-      <h3>No Audio Retained</h3>
-      <p>Voice recordings are transcribed and immediately deleted. We never store raw audio.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🔑</div>
-      <h3>Access Controls</h3>
-      <p>Strict role-based access. Our team cannot read your data without explicit authorization.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">📋</div>
-      <h3>Audit Logs</h3>
-      <p>All access to your workspace is logged. Business tier customers can request access logs.</p>
-    </div>
-  </div>
+<p class="date">Última actualización: 13 de marzo de 2026</p>
 
-  <h2>Infrastructure</h2>
-  <p>Retena runs on enterprise-grade cloud infrastructure hosted in the European Union and USA. Our servers are protected by:</p>
-  <ul>
-    <li>DDoS protection and rate limiting at the network edge</li>
-    <li>Automated vulnerability scanning and dependency monitoring</li>
-    <li>Regular security patches and updates</li>
-    <li>Database backups with point-in-time recovery, encrypted and stored off-site</li>
-    <li>Isolated network environments — application, database, and cache tiers are separated</li>
-  </ul>
+<p>En Retena, la seguridad de tu información es nuestra máxima prioridad. Esta política describe nuestras medidas de seguridad y procedimientos para proteger tus datos de voz y comunicaciones grupales.</p>
 
-  <h2>Authentication</h2>
-  <ul>
-    <li>Dashboard access requires phone-based OTP verification — no passwords to steal</li>
-    <li>Session tokens are cryptographically random and expire after 30 days</li>
-    <li>API access uses short-lived tokens scoped to specific operations</li>
-    <li>No third-party OAuth means no risk from compromised social login providers</li>
-  </ul>
+<h2>🔒 Arquitectura de Seguridad</h2>
 
-  <h2>AI Processing</h2>
-  <p>When processing voice notes and generating AI responses, your data is sent to our AI infrastructure over encrypted connections. We specifically choose providers whose terms prohibit using customer data for model training. Your team's conversations are not used to train any AI model.</p>
-
-  <h2>Employee Access</h2>
-  <p>Retena employees do not have routine access to customer data. Access requires multi-factor authentication, is granted on a need-to-know basis, and every access event is logged. We will never sell, rent, or share your data with third parties for marketing purposes.</p>
-
-  <h2>Responsible Disclosure</h2>
-  <div class="disclosure-box">
-    <p>If you discover a security vulnerability, please report it responsibly. We take all reports seriously and aim to resolve critical issues within 48 hours.</p>
-    <p>📧 <a href="mailto:security@retena.app">security@retena.app</a> — Please include a description, steps to reproduce, and potential impact. We will acknowledge your report within 24 hours.</p>
-    <p style="font-size:.85rem;">We ask that you do not publicly disclose the issue until we have had the opportunity to investigate and remediate.</p>
-  </div>
-
-  <h2>Questions</h2>
-  <p>Have security questions or concerns? <a href="/contact">Contact us</a> or email <a href="mailto:security@retena.app">security@retena.app</a>.</p>
+<h3>Cifrado de Extremo a Extremo</h3>
+<div class="highlight">
+<p><strong>Todas las transcripciones están cifradas en reposo con AES-256.</strong> Los archivos de audio se procesan y eliminan inmediatamente; solo las transcripciones de texto se almacenan de forma segura.</p>
 </div>
+
+<ul>
+<li><strong>Datos en tránsito:</strong> TLS 1.3 para todas las comunicaciones</li>
+<li><strong>Datos en reposo:</strong> Cifrado AES-256 con rotación de claves</li>
+<li><strong>Claves de acceso:</strong> Gestión segura con AWS KMS</li>
+<li><strong>Audio temporal:</strong> Se elimina automáticamente tras la transcripción</li>
+</ul>
+
+<h3>Acceso y Autenticación</h3>
+<ul>
+<li>Autenticación de dos factores (2FA) obligatoria para administradores</li>
+<li>Tokens de sesión con caducidad automática</li>
+<li>Registro completo de accesos y actividades</li>
+<li>Principio de menor privilegio para todos los roles</li>
+</ul>
+
+<h2>🛡️ Protección de Datos</h2>
+
+<h3>Retención Limitada</h3>
+<p>Implementamos políticas estrictas de retención de datos:</p>
+
+<ul>
+<li><strong>Audio:</strong> Eliminado inmediatamente después del procesamiento (máximo 30 segundos)</li>
+<li><strong>Transcripciones:</strong> Retenidas según configuración del cliente (30-365 días)</li>
+<li><strong>Metadatos:</strong> Almacenados el tiempo mínimo necesario para funcionalidad</li>
+<li><strong>Logs de acceso:</strong> 90 días máximo para auditoría y seguridad</li>
+</ul>
+
+<h3>Anonimización y Privacidad</h3>
+<div class="highlight">
+<p><strong>Retena solo procesa los grupos donde es explícitamente añadida.</strong> No tenemos acceso a conversaciones privadas o grupos no autorizados.</p>
+</div>
+
+<ul>
+<li>Separación completa entre diferentes organizaciones</li>
+<li>No se comparten datos entre clientes</li>
+<li>Opción de eliminar datos bajo solicitud (derecho al olvido)</li>
+<li>Configuración granular de permisos por grupo</li>
+</ul>
+
+<h2>🏗️ Infraestructura Segura</h2>
+
+<h3>Alojamiento y Cumplimiento</h3>
+<ul>
+<li><strong>Proveedores:</strong> AWS y Google Cloud (certificados SOC 2 Type II)</li>
+<li><strong>Ubicación:</strong> Centros de datos en UE para clientes europeos</li>
+<li><strong>Cumplimiento:</strong> GDPR, CCPA, SOC 2, ISO 27001</li>
+<li><strong>Backups:</strong> Cifrados y distribuidos geográficamente</li>
+</ul>
+
+<h3>Monitoreo y Respuesta a Incidentes</h3>
+<ul>
+<li>Monitoreo 24/7 de sistemas y seguridad</li>
+<li>Alertas automáticas para actividad sospechosa</li>
+<li>Plan de respuesta a incidentes con tiempos definidos</li>
+<li>Auditorías de seguridad trimestrales por terceros</li>
+</ul>
+
+<h2>👥 Acceso de Empleados</h2>
+
+<h3>Control Estricto</h3>
+<div class="highlight">
+<p><strong>El acceso a datos de clientes está estrictamente limitado y registrado.</strong> Solo personal autorizado con necesidad comercial legítima puede acceder a transcripciones para soporte técnico.</p>
+</div>
+
+<ul>
+<li>Verificación de antecedentes para todo personal técnico</li>
+<li>Acceso temporal y registrado para resolución de problemas</li>
+<li>Prohibición absoluta de acceso no autorizado</li>
+<li>Auditorías regulares de permisos y accesos</li>
+</ul>
+
+<h2>🔄 Actualizaciones de Seguridad</h2>
+
+<h3>Mejora Continua</h3>
+<ul>
+<li>Actualizaciones automáticas de seguridad en sistemas críticos</li>
+<li>Testing de penetración semestral</li>
+<li>Revisión continua de políticas de seguridad</li>
+<li>Capacitación regular del equipo en mejores prácticas</li>
+</ul>
+
+<h2>📞 Reporte de Vulnerabilidades</h2>
+
+<h3>Disclosure Responsable</h3>
+<p>Si descubres una vulnerabilidad de seguridad, por favor contacta nuestro equipo de manera responsable:</p>
+
+<ul>
+<li><strong>Email:</strong> <a href="mailto:security@retena.app">security@retena.app</a></li>
+<li><strong>Response time:</strong> 24 horas para confirmación inicial</li>
+<li><strong>Resolution:</strong> Parches críticos implementados en 72 horas máximo</li>
+<li><strong>Recompensa:</strong> Programa de bug bounty para investigadores</li>
+</ul>
+
+<div class="highlight">
+<p><strong>Programa Bug Bounty:</strong> Ofrecemos recompensas de $50-$5000 USD por vulnerabilidades válidas según criticidad y impacto.</p>
+</div>
+
+<h2>✅ Certificaciones y Estándares</h2>
+
+<p>Retena cumple con los más altos estándares de seguridad de la industria:</p>
+
+<ul>
+<li><strong>SOC 2 Type II:</strong> Controles de seguridad, disponibilidad y confidencialidad</li>
+<li><strong>ISO 27001:</strong> Sistema de gestión de seguridad de la información</li>
+<li><strong>GDPR:</strong> Regulación General de Protección de Datos (UE)</li>
+<li><strong>CCPA:</strong> Ley de Privacidad del Consumidor de California</li>
+<li><strong>PIPEDA:</strong> Ley de Protección de Información Personal (Canadá)</li>
+</ul>
+
+<h2>📋 Contacto</h2>
+
+<p>Para preguntas sobre seguridad o esta política:</p>
+
+<ul>
+<li><strong>Email general:</strong> <a href="mailto:hello@retena.app">hello@retena.app</a></li>
+<li><strong>Security team:</strong> <a href="mailto:security@retena.app">security@retena.app</a></li>
+<li><strong>Legal/DPO:</strong> <a href="mailto:legal@retena.app">legal@retena.app</a></li>
+</ul>
+
+<p>Nos comprometemos a mantener la más alta seguridad en el manejo de tus comunicaciones de equipo. Esta política se actualiza regularmente para reflejar nuevas amenazas y mejores prácticas.</p>
+
 <footer>
-  <a href="/privacy">Privacy</a>
-  <a href="/terms">Terms</a>
-  <a href="/security">Security</a>
-  <a href="/contact">Contact</a>
-  <p style="margin-top:1rem;color:var(--text2);font-size:.8rem;">© 2026 Retena. All rights reserved.</p>
+<p><a href="/privacy-policy.html">Política de Privacidad</a> • <a href="/terms-of-service.html">Términos de Servicio</a> • <a href="/security.html">Seguridad</a> • <a href="mailto:hello@retena.app">Contacto</a> • <a href="https://voz-clara.com">VozClara</a></p>
+<p>Construido con ⚡ • Tecnología <a href="https://voz-clara.com">VozClara</a></p>
 </footer>
+
+</div>
+
 </body>
 </html>
