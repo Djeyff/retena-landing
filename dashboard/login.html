@@ -150,7 +150,7 @@
 
     <div class="footer">
       Don't have an account?<br>
-      <a href="https://wa.me/18292044903?text=Hola%20Retena" target="_blank">Start free on WhatsApp</a>
+      <a href="#" onclick="openWA('18292044903')">Start free on WhatsApp</a>
       &nbsp;·&nbsp;
       <a href="https://t.me/VozClaraBot" target="_blank">Telegram</a>
       <br><br>
@@ -159,6 +159,17 @@
   </div>
 
   <script>
+    function openWA(phone) {
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      if (isAndroid)
+        window.location.href = `intent://send/${phone}#Intent;scheme=whatsapp;package=com.whatsapp;end`;
+      else if (isIOS)
+        window.location.href = `whatsapp://send?phone=${phone}`;
+      else
+        window.open(`https://wa.me/${phone}`, '_blank');
+    }
+
     // If already authenticated, go to dashboard
     fetch('/api/auth/me').then(r => {
       if (r.ok) window.location.replace('/dashboard/');
