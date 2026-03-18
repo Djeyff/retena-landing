@@ -9,6 +9,8 @@
     { "src": "/dashboard/(.*)",      "dest": "/dashboard/$1" },
     { "src": "/favicon.svg",         "dest": "/favicon.svg" },
     { "src": "/og.svg",              "dest": "/og.svg" },
+    { "src": "/privacy-policy.html", "dest": "/privacy-policy.html" },
+    { "src": "/terms-of-service.html", "dest": "/terms-of-service.html" },
     { "src": "/(.*)",                "dest": "/index.html" }
   ]
 }
