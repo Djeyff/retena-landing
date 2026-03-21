@@ -1,0 +1,86 @@
+{
+  "_description": "Single source of truth for Retena product. Landing page sync cron checks against this.",
+  "_updated": "2026-03-21",
+  
+  "tagline": "AI memory for your entire WhatsApp",
+  "positioning": "Groups + Personal chats — for teams AND individuals",
+  
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "period": "month",
+      "seats": 1,
+      "extra_seat_price": 15,
+      "groups": 5,
+      "personal_chats": true,
+      "voice_minutes": 250,
+      "ai_queries": 50,
+      "transcribed_messages": 15000,
+      "history": "6 months",
+      "features": ["Voice transcription (99 languages)", "AI daily summaries", "Personal chats included", "Message capture", "Push notifications"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": 79,
+      "currency": "USD",
+      "period": "month",
+      "seats": 3,
+      "extra_seat_price": 15,
+      "groups": 15,
+      "personal_chats": true,
+      "voice_minutes": 1000,
+      "ai_queries": 300,
+      "transcribed_messages": 50000,
+      "history": "12 months",
+      "features": ["Everything in Starter", "AI search", "Export PDF/CSV", "Team activity tracking", "Cross-group search", "Keyword alerts"]
+    },
+    "business": {
+      "name": "Business",
+      "price": 199,
+      "currency": "USD",
+      "period": "month",
+      "seats": 5,
+      "extra_seat_price": 15,
+      "groups": "Unlimited",
+      "personal_chats": true,
+      "voice_minutes": 4000,
+      "ai_queries": 5000,
+      "transcribed_messages": 100000,
+      "history": "Unlimited",
+      "features": ["Everything in Pro", "Unlimited groups", "API access", "Priority support", "Custom integrations", "Advanced analytics"]
+    }
+  },
+
+  "key_features": [
+    "Voice note transcription (99 languages)",
+    "Groups + Personal chat capture",
+    "AI-powered search (cross-language)",
+    "Daily AI summaries per group",
+    "Activity analytics",
+    "Export (CSV/JSON)",
+    "Push notifications",
+    "Keyword alerts",
+    "Zero setup (pairing code, no bot)",
+    "Multi-language auto-detection",
+    "Search history with caching",
+    "Profile pictures from WhatsApp"
+  ],
+
+  "use_cases": [
+    "Construction teams",
+    "Logistics coordinators",
+    "Sales teams",
+    "Healthcare professionals",
+    "Legal professionals",
+    "Real estate agents",
+    "Freelancers",
+    "Field teams"
+  ],
+
+  "connection_method": "Pairing code (NOT QR code, NOT bot number)",
+  "audio_storage": "Deleted after transcription — never stored",
+  "ai_providers_public": false,
+  "competitor_differentiator": "WhatsApp native (not Zoom/Teams like Fireflies/Otter)"
+}
